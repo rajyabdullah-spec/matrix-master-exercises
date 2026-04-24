@@ -1,0 +1,54 @@
+*{
+ margin: 5px;
+ padding: 0px;
+ box-sizing: border-box;
+}
+
+#container{
+ width: 950px;
+ background-color: silver;
+ margin: 0px auto;
+ padding: 10px;
+
+
+}
+#header{
+ height: 100px;
+ height: 150px;
+ background-color: blue;
+
+}
+
+#body_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#nav_bar{
+ height: 400px;
+ width: 200px;
+ background-color: red; 
+
+}
+
+#main_content{
+ height: 400px;
+ width: 710px;
+ background-color: yellow;
+ display: flex;
+ flex-wrap:wrap;
+ justify-content: space-around;
+}
+
+.subcontent{
+ height: 200px;
+ width: 200px;
+ background-color: purple;
+}
+
+#advertisements{
+ height: 150px;
+ width: 670px;
+ background-color: pink;
+}
