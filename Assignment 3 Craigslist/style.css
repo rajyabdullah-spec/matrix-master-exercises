@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 20px 0;
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #eee9e9;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 0;
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+.header > div {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.header-logo {
+    width: 220px;
+    text-align: center;
+}
+
+.header-logo a {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.header-title {
+    width: 530px;
+    text-align: center;
+}
+
+.header-title span {
+    display: inline-block;
+    background-color: #dcdcdc;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 20px;
+}
+
+.header-controls {
+    width: 220px;
+    text-align: right;
+}
+
+.main-content {
+    font-size: 0;
+}
+
+.column {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 200px;
+    padding-right: 15px;
+}
+
+.sidebar-top-links {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    background-color: #dcdcdc;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-box input, .search-box select {
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+}
+
+.search-box button {
+    margin-top: 5px;
+}
+
+.sidebar-bottom-links {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.date-updated {
+    display: block;
+    margin-top: 20px;
+    color: #000;
+}
+
+.content-col {
+    width: 255px;
+    padding: 0 10px;
+}
+
+.section {
+    margin-bottom: 10px;
+}
+
+.section-title {
+    background-color: #dcdcdc;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px 0;
+    margin-bottom: 5px;
+}
+
+.section-title-blue {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    background-color: #ffffff;
+    margin-bottom: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+ul li a {
+    text-decoration: underline;
+}
