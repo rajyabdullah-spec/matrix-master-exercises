@@ -291,3 +291,60 @@ a:hover {
     margin-top: 5px;
     color: #888;
 }
+
+
+/* --- Responsive Design (Mobile & Tablets) --- */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    #hero-section {
+        flex-direction: column;
+    }
+
+    #signup-column {
+        width: 100%;
+    }
+
+    .search-form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .alphabet-directory {
+        flex-direction: column;
+    }
+
+    .alphabet-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 2;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+        gap: 5px;
+    }
+
+    .footer-category {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .footer-legal {
+        text-align: center;
+        line-height: 1.8;
+    }
+}
