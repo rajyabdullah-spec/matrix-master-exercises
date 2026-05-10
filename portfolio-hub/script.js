@@ -19,13 +19,48 @@ const myWork = [
 
 // --- 2. مصفوفة تمارين JavaScript (ترقيم مستقل يبدأ من 01) ---
 const jsExercises = [
-    { id: "01", name: "Variables", desc: "Mastering data types, let, const, and naming conventions.", path: "../vanilla-js-exercises/01-Variables/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/01-Variables" },
-    { id: "02", name: "Functions", desc: "Creating and invoking reusable logic blocks with parameters.", path: "../vanilla-js-exercises/02-Functions/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/02-Functions" },
-    { id: "03", name: "Arrays & Loops", desc: "Mastering data collections and iteration using For loops.", path: "../vanilla-js-exercises/03-Arrays-Loops/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/03-Arrays-Loops" },
-    { id: "04", name: "Object Literals", desc: "Storing and accessing data using structured JavaScript objects.", path: "../vanilla-js-exercises/04-Objects/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/04-Objects" },
-    { id: "05", name: "Objects as Classes", desc: "Introduction to OOP, constructors, and class methods.", path: "../vanilla-js-exercises/05-Objects-as-Classes/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/05-Objects-as-Classes" },
-    { id: "06", name: "Window Object", desc: "Using browser APIs like alert, prompt, and window methods.", path: "../vanilla-js-exercises/06-Window-Object/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/06-Window-Object" },
-    { id: "07", name: "DOM Manipulation", desc: "Dynamic interaction: Events, Selection, and live UI updates.", path: "../vanilla-js-exercises/07-DOM-Manipulation/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/vanilla-js-exercises/07-DOM-Manipulation" }
+    { 
+        id: "01", name: "Variables & Conditionals", 
+        desc: "Foundational logic: variables and conditionals. Open console for results.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/01-variables-and-conditionals/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/01-variables-and-conditionals" 
+    },
+    { 
+        id: "02", name: "Functions", 
+        desc: "Logic blocks and reusable functions. Open console for results.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/02-functions/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/02-functions" 
+    },
+    { 
+        id: "03", name: "Arrays & Loops", 
+        desc: "Iteration and data collections. Open console for results.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/03-arrays-and-loops/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/03-arrays-and-loops" 
+    },
+    { 
+        id: "04", name: "Object Literals", 
+        desc: "Structured data using JS Objects. Open console for results.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/04-Objects/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/04-Objects" 
+    },
+    { 
+        id: "05", name: "Objects as Classes", 
+        desc: "OOP Principles and constructors. Open console for results.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/05-Objects-as-Classes/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/05-Objects-as-Classes" 
+    },
+    { 
+        id: "06", name: "Window Object", 
+        desc: "Interactive exercise using Browser APIs (Alerts & Prompts).", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/06-Window-Object/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/06-Window-Object" 
+    },
+    { 
+        id: "07", name: "DOM Manipulation", 
+        desc: "Live UI interaction and DOM events manipulation.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/07-DOM-Manipulation/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/07-DOM-Manipulation" 
+    }
 ];
 
 const grid = document.getElementById('projects-grid');
