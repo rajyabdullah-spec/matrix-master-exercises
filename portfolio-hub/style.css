@@ -1,4 +1,3 @@
-/* style.css */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --glass-bg: rgba(255, 255, 255, 0.7);
@@ -20,7 +19,6 @@ body {
     margin-bottom: 60px;
 }
 
-/* التنسيق الخاص بأزرار التبديل */
 .tab-container {
     display: inline-flex;
     background: rgba(255, 255, 255, 0.05);
@@ -51,7 +49,6 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* تنسيق كروت المشاريع (تصميمك الأصلي) */
 .project-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -114,7 +111,6 @@ body {
 
 .future-card .card-title { color: #94a3b8; }
 
-/* تأثير الانتقال السلس للمحتوى */
 #projects-grid {
     transition: opacity 0.3s ease;
 }

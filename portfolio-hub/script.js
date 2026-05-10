@@ -57,6 +57,24 @@ const jsExercises = [
         desc: "Live UI interaction and DOM events manipulation.", 
         path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/07-DOM-Manipulation/", 
         github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/07-DOM-Manipulation" 
+    },
+    { 
+        id: "08", name: "Interactive Task Manager", 
+        desc: "A comprehensive project combining HTML, Bootstrap, and JS logic to manage tasks dynamically.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/08-Bring-everything-together/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/08-Bring-everything-together" 
+    },
+    { 
+        id: "09", name: "Advanced DOM Manipulation", 
+        desc: "Practicing event listeners, dynamic CSS class toggling, and real-time element replacement.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/09-DOM-Manipulation/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/09-DOM-Manipulation" 
+    },
+    { 
+        id: "10", name: "The JS Calculator", 
+        desc: "A fully functional calculator supporting chained mathematical operations and clean UI with Bootstrap.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/10-The-Calculator/", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/10-The-Calculator" 
     }
 ];
 
@@ -90,9 +108,8 @@ function render(type) {
             </div>`;
         });
 
-        // المهمات المشفرة تبدأ من بعد آخر تمرين جافا سكريبت (رقم 08)
         if (type === 'js') {
-            for(let i = 8; i <= 25; i++) {
+            for(let i = 11; i <= 25; i++) {
                 grid.innerHTML += `
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card future-card">
