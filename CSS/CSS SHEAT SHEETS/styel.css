@@ -1,0 +1,145 @@
+body {
+    font-family: Trebuchet MS (sans-serif);
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #141111;
+    color: #ebe1e1;
+    margin: 0;
+
+    line-height: 1.5em;
+
+}
+
+a {
+    text-decoration:none;
+    color: #fff;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}   
+a:active {
+    color: rgb(65, 22, 157);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: rgb(119, 157, 22);
+    text-decoration: underline;
+}   
+
+.container {
+    width: 80%;
+    margin: auto;
+    
+}
+
+.clr {
+    clear: both;
+}
+
+
+.box-1 {
+    background-color: #141111;
+    color: #fff;
+    border-right: 5px red solid;
+    border-left: 5px red solid;
+    border-top: 5px red solid;
+    border-bottom: 5px red solid;
+
+    /* same as above */
+    border: 5px red solid;
+    border-width: 3px;
+    border-bottom-width: 5px;
+    border-top-style: dotted;
+
+padding: 20px;
+
+margin: 20px;
+}
+.box-1 h1 {
+    text-align: center;
+    color: #fff;
+    font-family: tahoma;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: wavy underline;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    word-spacing: normal;
+
+}  
+
+.box-2 {
+    border: 3px dotted red;
+    padding: 20px;
+    margin: 20px;
+}
+
+.categories {
+    border: 1px solid red;
+    padding: 10px;
+    border -radius: 15px;
+}
+
+.categories h2 {
+    text-align: center;
+    color: #fff;
+    font-family: tahoma;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: wavy underline;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    word-spacing: normal;
+
+}
+
+.categories ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.categories li {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted red;
+
+}
+
+.block{
+   float: left;
+    width: 30%;
+    margin: 1.66%;
+    border: #fff solid 1px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#main-block {
+    float: left;
+    width: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    float: right;
+    width: 25%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+
+}
+
+.p-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000000;
+    margin-top: 30px;
+    
+}

@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    color: #333;
+    line-height: 1.4;
+    background-color: #fff;
+}
+
+h1, h2 {
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+header p {
+    margin: 5px 0 15px 0;
+}
+
+.top-links {
+    padding: 0;
+    margin: 0 0 15px 20px;
+}
+
+.top-links li {
+    list-style-type: disc;
+    margin-bottom: 3px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.side-column {
+    flex: 2;
+    min-width: 200px;
+    max-width: 250px;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.search-form {
+    margin-top: 15px;
+}
+
+.search-form label {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.search-form input[type="text"],
+.search-form select {
+    width: 100%;
+    padding: 4px;
+    margin-top: 3px;
+    box-sizing: border-box;
+}
+
+.location-card {
+    margin-bottom: 25px;
+}
+
+.pink-label {
+    color: #d8457b;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.price-label {
+    font-size: 0.75em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.location-img {
+    width: 100%;
+    height: 130px; 
+    object-fit: cover;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.main-image {
+    width: 550px;
+    height: 350px; 
+    object-fit:cover;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.host-section {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    align-items: flex-start;
+}
+
+.host-pic {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.host-text p {
+    margin: 2px 0;
+    font-size: 0.95em;
+}
+
+.press-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+    padding-top: 15px;
+}
+
+.as-seen-text {
+    font-style: italic;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.logos-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto; 
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.brand-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}

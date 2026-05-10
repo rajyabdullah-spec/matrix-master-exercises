@@ -1,0 +1,58 @@
+body{
+font-family: 'Times New Roman', Times, serif;
+background-color: #fff;
+color: #000;
+margin-top: 20px;
+}
+
+.logo-container{
+    position: relative;
+    display: inline-block;
+}
+
+.search-section{
+    background-color: #eeeeee;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.search-section p{
+    margin: 5px;
+}
+
+.footer-table{
+width: 100%;
+border-collapse:separate;
+text-align: center;
+}
+
+.footer-table td{
+padding: 15px;
+vertical-align: top;
+width: 33.33%;
+}
+
+.column-blue{
+    background-color: #7ee5da;
+
+}
+
+.column-cyan{
+    background-color: #70ccc2;
+}
+
+.column-green{
+    background-color: #62b3aa;
+}
+a{
+    color: blue;
+    text-decoration: underline;
+}
+.copyright{
+    font-size: 12px;
+    margin-top: 20px;
+}
+input{ 
+    margin: 4px;
+}
