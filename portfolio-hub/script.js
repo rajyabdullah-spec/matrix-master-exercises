@@ -1,23 +1,20 @@
-/* script.js */
-
-// --- 1. مصفوفة مشاريع HTML & CSS (ترقيم مستقل 01-13) ---
 const myWork = [
-    { id: "01", name: "HTML Code Formatting", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Fix-Indentation.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment", desc: "Improving HTML readability by organizing code structure and fixing indentation." },
-    { id: "02", name: "HTML Code Validation", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Code-Validation.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment", desc: "Identifying and fixing syntax errors to ensure W3C web standards compliance." },
-    { id: "03", name: "Personal Website Foundations", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Your-first-website.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment", desc: "Building a personal website from scratch using essential semantic HTML elements." },
-    { id: "04", name: "Layout Repair & Box Model", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/The Evil Hacker/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/The%20Evil%20Hacker", desc: "Reconstructing layouts using CSS Box Model and Display properties without floats." },
-    { id: "05", name: "Classic Google UI Clone", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Google/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/Google", desc: "Recreating the iconic 1998 Google interface with precise layout replication." },
-    { id: "06", name: "Twitter Login UI Redesign", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Twitter/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/Twitter", desc: "Developing a modern, responsive login page focusing on UI and logo integration." },
-    { id: "07", name: "Legacy Airbnb UI Clone", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/AirBNB/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/AirBNB", desc: "Recreating the 2009 Airbnb landing page using fixed-width layout techniques." },
-    { id: "08", name: "Craigslist Legacy Layout", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Craigslist/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/Craigslist", desc: "Building a multi-column layout with manual content organization." },
-    { id: "09", name: "Front-End Demo Challenge", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Demo-Challenge-paypal2002/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Demo-Challenge-paypal2002", desc: "Recreating the original 2001 PayPal landing page with clean HTML and CSS." },
-    { id: "10", name: "Legacy LinkedIn Login UI", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Front-End-Challenge-Linkedin/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Front-End-Challenge-Linkedin", desc: "Replicating the 2008 LinkedIn login page focusing on clean code structure." },
-    { id: "11", name: "Materialize CSS Design", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/The Materialize/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/The%20Materialize", desc: "Replicating professional UI styling using Materialize CSS standards." },
-    { id: "12", name: "Bootstrap Personal Site", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Time-to-Bootstrap/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/Time-to-Bootstrap", desc: "Modernizing a site using Bootstrap's grid system for mobile-first design." },
-    { id: "13", name: "Framework-Powered Redesign", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/Assignment/Your-first-website-with-Framework/index.html", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/Assignment/Your-first-website-with-Framework", desc: "Applying advanced Bootstrap components for a professional, responsive layout." }
+    { id: "01", name: "HTML Code Formatting", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-1-Fix-Indentation", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-1-Fix-Indentation", desc: "Improving HTML readability by organizing code structure and fixing indentation." },
+    { id: "02", name: "HTML Code Validation", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-2-Code-Validation", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-2-Code-Validation", desc: "Identifying and fixing syntax errors to ensure W3C web standards compliance." },
+    { id: "03", name: "Personal Website Foundations", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-3-Your-first-website", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-3-Your-first-website", desc: "Building a personal website from scratch using essential semantic HTML elements." },
+    { id: "04", name: "Layout Repair & Box Model", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-4-The-Evil-Hacker", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-4-The-Evil-Hacker", desc: "Reconstructing layouts using CSS Box Model and Display properties without floats." },
+    { id: "05", name: "Classic Google UI Clone", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-5-Google", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-5-Google", desc: "Recreating the iconic 1998 Google interface with precise layout replication." },
+    { id: "06", name: "Twitter Login UI Redesign", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-6-Twitter", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-6-Twitter", desc: "Developing a modern, responsive login page focusing on UI and logo integration." },
+    { id: "07", name: "Legacy Airbnb UI Clone", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-7-AirBNB", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-7-AirBNB", desc: "Recreating the 2009 Airbnb landing page using fixed-width layout techniques." },
+    { id: "08", name: "Craigslist Legacy Layout", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-8-Craigslist", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-8-Craigslist", desc: "Building a multi-column layout with manual content organization." },
+    { id: "09", name: "Front-End Demo Challenge", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Demo-Challenge-paypal2002", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Demo-Challenge-paypal2002", desc: "Recreating the original 2001 PayPal landing page with clean HTML and CSS." },
+    { id: "10", name: "Legacy LinkedIn Login UI", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Front-End-Challenge-Linkedin", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Front-End-Challenge-Linkedin", desc: "Replicating the 2008 LinkedIn login page focusing on clean code structure." },
+    { id: "11", name: "Materialize CSS Design", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-9-The-Materialize", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-9-The-Materialize", desc: "Replicating professional UI styling using Materialize CSS standards." },
+    { id: "12", name: "Bootstrap Personal Site", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-10-Time-to-Bootstrap", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-10-Time-to-Bootstrap", desc: "Modernizing a site using Bootstrap's grid system for mobile-first design." },
+    { id: "13", name: "Framework-Powered Redesign", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-11-Your-first-website-with-Framework", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-11-Your-first-website-with-Framework", desc: "Applying advanced Bootstrap components for a professional, responsive layout." }
 ];
 
-// --- 2. مصفوفة تمارين JavaScript (ترقيم مستقل يبدأ من 01) ---
+
 const jsExercises = [
     { 
         id: "01", name: "Variables & Conditionals", 
@@ -111,7 +108,6 @@ function render(type) {
     }, 200);
 }
 
-// أزرار التحكم والتبديل
 btnHtml.onclick = () => {
     btnHtml.classList.add('active');
     btnJs.classList.remove('active');
@@ -124,5 +120,5 @@ btnJs.onclick = () => {
     render('js');
 };
 
-// العرض الافتراضي عند فتح الصفحة
+
 render('html');
