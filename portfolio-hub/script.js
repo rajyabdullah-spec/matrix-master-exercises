@@ -75,6 +75,12 @@ const jsExercises = [
         desc: "A fully functional calculator supporting chained mathematical operations and clean UI with Bootstrap.", 
         path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/10-The-Calculator/", 
         github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/10-The-Calculator" 
+    },
+    { 
+        id: "11", name: "ES6 Fundamentals", 
+        desc: "Advanced JavaScript exercises covering Destructuring, Spread Operator, and ES6 Scoping.", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/tree/main/11-ES6-Exercises", 
+        github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/11-ES6-Exercises" 
     }
 ];
 
@@ -109,7 +115,7 @@ function render(type) {
         });
 
         if (type === 'js') {
-            for(let i = 11; i <= 25; i++) {
+            for(let i = 12; i <= 25; i++) {
                 grid.innerHTML += `
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card future-card">
@@ -136,6 +142,5 @@ btnJs.onclick = () => {
     btnHtml.classList.remove('active');
     render('js');
 };
-
 
 render('html');
