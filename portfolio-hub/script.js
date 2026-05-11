@@ -79,7 +79,7 @@ const jsExercises = [
     { 
         id: "11", name: "ES6 Fundamentals", 
         desc: "Advanced JavaScript exercises covering Destructuring, Spread Operator, and ES6 Scoping.", 
-        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/tree/main/11-ES6-Exercises", 
+        path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/11-ES6-Exercises", 
         github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/11-ES6-Exercises" 
     }
 ];
