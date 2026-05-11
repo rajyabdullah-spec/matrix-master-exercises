@@ -103,13 +103,18 @@ body {
     margin-top: auto;
     transition: 0.3s;
 }
-
-.future-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
+.algo-card {
+    border-left: 6px solid #f59e0b !important;
+    background: rgba(245, 158, 11, 0.05) !important;
 }
 
-.future-card .card-title { color: #94a3b8; }
+.algo-card .task-tag {
+    color: #d97706;
+}
+
+.algo-card .btn-launch {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
 
 #projects-grid {
     transition: opacity 0.3s ease;
