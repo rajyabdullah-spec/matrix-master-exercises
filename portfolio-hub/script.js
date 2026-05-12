@@ -34,6 +34,13 @@ const algoMastery = [
         desc: "Mastering 8 fundamental challenges (1-135, Sum, Max, Average) with T-Diagram analysis.", 
         path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Monday-Basic.js", 
         github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" 
+    },
+    { 
+    id: "Basic-02", 
+    name: "Tuesday: JS Basic Algorithms", 
+    desc: "Solving 6 core challenges (Fibonacci, FizzBuzz, Array Shifting, Censorship) with detailed logic tracing.", 
+    path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Tuesday-Logic.js", 
+    github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" 
     }
 ];
 
