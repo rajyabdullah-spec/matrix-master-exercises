@@ -25,7 +25,8 @@ const jsExercises = [
     { id: "08", name: "Interactive Task Manager", desc: "Comprehensive project with JS logic and Bootstrap.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/08-Bring-everything-together/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/08-Bring-everything-together" },
     { id: "09", name: "Advanced DOM", desc: "Practicing event listeners and real-time element replacement.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/09-DOM-Manipulation/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/09-DOM-Manipulation" },
     { id: "10", name: "The JS Calculator", desc: "Fully functional calculator with chained operations.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/10-The-Calculator/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/10-The-Calculator" },
-    { id: "11", name: "ES6 Fundamentals", desc: "Advanced ES6 Scoping, Destructuring, and Spread.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/11-ES6-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/11-ES6-Exercises" }
+    { id: "11", name: "ES6 Fundamentals", desc: "Advanced ES6 Scoping, Destructuring, and Spread.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/11-ES6-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/11-ES6-Exercises" },
+    { id: "12", name: "Array Processing", desc: "Advanced manipulation of data collections using filter, map, and reduce.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/12-Array-Processing-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/12-Array-Processing-Exercises" }
 ];
 
 const algoMastery = [
