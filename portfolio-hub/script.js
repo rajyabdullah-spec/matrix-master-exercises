@@ -26,23 +26,14 @@ const jsExercises = [
     { id: "09", name: "Advanced DOM", desc: "Practicing event listeners and real-time element replacement.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/09-DOM-Manipulation/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/09-DOM-Manipulation" },
     { id: "10", name: "The JS Calculator", desc: "Fully functional calculator with chained operations.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/10-The-Calculator/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/10-The-Calculator" },
     { id: "11", name: "ES6 Fundamentals", desc: "Advanced ES6 Scoping, Destructuring, and Spread.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/11-ES6-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/11-ES6-Exercises" },
-    { id: "12", name: "Array Processing", desc: "Advanced manipulation of data collections using filter, map, and reduce.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/12-Array-Processing-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/12-Array-Processing-Exercises" }
+    { id: "12", name: "Array Processing", desc: "Advanced manipulation of data collections using filter, map, and reduce.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/12-Array-Processing-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/12-Array-Processing-Exercises" },
+    { id: "13", name: "Functions Logic", desc: "Mastering arrow functions, object methods, and logical operators for cleaner code.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/13-Functions-Logic/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/13-Functions-Logic" }
 ];
 
 const algoMastery = [
-    { 
-        id: "Basic-01", name: "Monday: JS Basic Algorithms", 
-        desc: "Mastering 8 fundamental challenges (1-135, Sum, Max, Average) with T-Diagram analysis.", 
-        path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Monday-Basic.js", 
-        github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" 
-    },
-    { 
-    id: "Basic-02", 
-    name: "Tuesday: JS Basic Algorithms", 
-    desc: "Solving 6 core challenges (Fibonacci, FizzBuzz, Array Shifting, Censorship) with detailed logic tracing.", 
-    path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Tuesday-Logic.js", 
-    github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" 
-    }
+    { id: "Basic-01", name: "Monday: JS Basic Algorithms", desc: "Mastering 8 fundamental challenges (1-135, Sum, Max, Average) with T-Diagram analysis.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Monday-Basic.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+    { id: "Basic-02", name: "Tuesday: JS Basic Algorithms", desc: "Solving 6 core challenges (Fibonacci, FizzBuzz, Array Shifting, Censorship) with detailed logic tracing.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Tuesday-Logic.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+    { id: "Basic-03", name: "Wednesday: Factorialize!", desc: "A function that returns the factorial of a given integer using iterative multiplication.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Wednesday-Factorial.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
 ];
 
 const grid = document.getElementById('projects-grid');
