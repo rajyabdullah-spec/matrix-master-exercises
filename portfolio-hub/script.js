@@ -76,6 +76,7 @@ function render(type) {
     }, 200);
 }
 
+
 btnHtml.onclick = () => { setActive(btnHtml); render('html'); };
 btnJs.onclick = () => { setActive(btnJs); render('js'); };
 btnAlgo.onclick = () => { setActive(btnAlgo); render('algo'); };
