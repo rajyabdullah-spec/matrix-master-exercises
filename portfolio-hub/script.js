@@ -1,3 +1,4 @@
+// 📁 1. HTML & CSS Master Assignments
 const myWork = [
     { id: "01", name: "HTML Code Formatting", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-1-Fix-Indentation", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-1-Fix-Indentation", desc: "Improving HTML readability by organizing code structure and fixing indentation." },
     { id: "02", name: "HTML Code Validation", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-2-Code-Validation", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-2-Code-Validation", desc: "Identifying and fixing syntax errors to ensure W3C web standards compliance." },
@@ -14,6 +15,7 @@ const myWork = [
     { id: "13", name: "Framework-Powered Redesign", path: "https://rajyabdullah-spec.github.io/matrix-master-exercises/html-css-assignments/Assignment-11-Your-first-website-with-Framework", github: "https://github.com/rajyabdullah-spec/matrix-master-exercises/tree/main/html-css-assignments/Assignment-11-Your-first-website-with-Framework", desc: "Applying advanced Bootstrap components for a professional, responsive layout." }
 ];
 
+// 🧠 2. Vanilla JavaScript Logic & DOM Exercises (Decoupled up to Project 15)
 const jsExercises = [
     { id: "01", name: "Variables & Conditionals", desc: "Foundational logic: variables and conditionals.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/01-variables-and-conditionals/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/01-variables-and-conditionals" },
     { id: "02", name: "Functions", desc: "Logic blocks and reusable functions.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/02-functions/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/02-functions" },
@@ -29,10 +31,10 @@ const jsExercises = [
     { id: "12", name: "Array Processing", desc: "Advanced manipulation of data collections using filter, map, and reduce.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/12-Array-Processing-Exercises/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/12-Array-Processing-Exercises" },
     { id: "13", name: "Functions Logic", desc: "Mastering arrow functions, object methods, and logical operators for cleaner code.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/13-Functions-Logic/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/13-Functions-Logic" },
     { id: "14", name: "Advanced Pomodoro Clock", desc: "A high-performance productivity tool featuring automated session switching, long-press controls, and a dynamic Glassmorphism UI.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/14-Pomodoro-Clock/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/14-Pomodoro-Clock" },
-    { id: "15", name: "OOP & Async Integration", desc: "Advanced architecture using ES6 Classes, Context binding (this), and Promise-based asynchronous logic.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/15-OOP-Putting-Everything-Together/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/15-OOP-Putting-Everything-Together" },
-    { id: "16", name: "Tenor GIF Fetch API", desc: "Live GIF search engine using classic XMLHttpRequest (XHR) architecture, JSON parsing, and dynamic DOM injection.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/16-AJAX-and-APIs/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/16-AJAX-and-APIs" }
+    { id: "15", name: "OOP & Async Integration", desc: "Advanced architecture using ES6 Classes, Context binding (this), and Promise-based asynchronous logic.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/15-OOP-Putting-Everything-Together/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/15-OOP-Putting-Everything-Together" }
 ];
 
+// 🧠 3. JavaScript Algorithms Mastery
 const algoMastery = [
     { id: "Basic-01", name: "Monday: Basic JS Algorithms", desc: "Mastering fundamental loops (1-135) and T-Diagram analysis for Sum, Max, and Average.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Monday-Basic.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
     { id: "Basic-02", name: "Tuesday: Logic Patterns", desc: "Practice advanced logic patterns including Fibonacci sequence and FizzBuzz challenges.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Tuesday-Logic.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
@@ -42,29 +44,52 @@ const algoMastery = [
     { id: "Intermediate-01", name: "Monday: Largest Number in Arrays", desc: "Extracting the maximum value from nested multi-dimensional arrays using optimized dual-iteration loops.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/02-Intermediate-Algorithms/Monday-LargestNumbers.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
     { id: "Intermediate-02", name: "Tuesday: Find the Longest Word", desc: "Analyzing text strings, splitting them into individual elements using string methods, and dynamically tracking maximum length boundaries.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/02-Intermediate-Algorithms/Tuesday-LongestWord.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
     { id: "Intermediate-03", name: "Wednesday: Title Case a Sentence", desc: "An intermediate algorithm that processes sentences to capitalize the first letter of each word and lowercase the rest, engineered with an embedded T-Diagram for verification.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/02-Intermediate-Algorithms/Wednesday-TitleCase.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
-    { id: "Intermediate-04", name: "Thursday: Sum All Numbers in a Range", desc: "Calculates the sum of a numerical range using two paradigms: a linear iterative loop O(n) and Gauss's arithmetic progression formula O(1), both documented with structural execution flow trace tables.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/02-Intermediate-Algorithms/thursday-sum-all-numbers-in-a-range.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }];
+    { id: "Intermediate-04", name: "Thursday: Sum All Numbers in a Range", desc: "Calculates the sum of a numerical range using two paradigms: a linear iterative loop O(n) and Gauss's arithmetic progression formula O(1), both documented with structural execution flow trace tables.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/02-Intermediate-Algorithms/thursday-sum-all-numbers-in-a-range.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+    { id: "Intermediate-05", name: "Friday: Fibonacci Sequence (n-th Term)", desc: "Calculating the n-th Fibonacci number using clean dynamic state tracking, completely documented with numerical trace sequences.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/02-Intermediate-Algorithms/Friday-Fibonacci.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+    { id: "Professional-01", name: "Monday: Game of 3s", desc: "Implementing the dynamic math game logic, dividing by 3 or adding/subtracting 1 to reach parity, fully traced with operational states.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/03-Professional-Algorithms/Monday-GameOfThree.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
+];
 
+// 🌐 4. Dynamic Web Applications (AJAX & APIs Pipeline)
+const ajaxProjects = [
+    { id: "16", name: "Tenor GIF Fetch API", desc: "Live GIF search engine using classic XMLHttpRequest (XHR) architecture, JSON parsing, and dynamic DOM injection.", path: "https://rajyabdullah-spec.github.io/ajax-api-applications/project-16-tenor-gif/", github: "https://github.com/rajyabdullah-spec/ajax-api-applications/tree/main/project-16-tenor-gif" },
+    { id: "17", name: "CineTrack - Movie Dashboard", desc: "Production-grade asynchronous search engine interfacing with OMDb API, featuring custom secure state loading and try-catch error traps.", path: "https://rajyabdullah-spec.github.io/ajax-api-applications/project-17-cinetrack-movies/", github: "https://github.com/rajyabdullah-spec/ajax-api-applications/tree/main/project-17-cinetrack-movies" },
+    { id: "18", name: "SkyCast - Weather Dashboard", desc: "Live global weather metrics station built on OpenWeatherMap API with secure unit switching configurations and adaptive interface contrast.", path: "https://rajyabdullah-spec.github.io/ajax-api-applications/project-18-skycast-weather/", github: "https://github.com/rajyabdullah-spec/ajax-api-applications/tree/main/project-18-skycast-weather" },
+    { id: "19", name: "StoreCraft - E-Commerce", desc: "Modern catalog powered by FakeStoreAPI utilizing full application state memory counters and zero-latency array local search filters.", path: "https://rajyabdullah-spec.github.io/ajax-api-applications/project-19-storecraft-ecommerce/", github: "https://github.com/rajyabdullah-spec/ajax-api-applications/tree/main/project-19-storecraft-ecommerce" },
+    { id: "20", name: "NASA Exploration Space", desc: "Planetary exploration dashboard tracking NASA APOD API with polymorphic layout rendering supporting responsive Bootstrap context iFrames.", path: "https://rajyabdullah-spec.github.io/ajax-api-applications/project-20-nasa-explorers/", github: "https://github.com/rajyabdullah-spec/ajax-api-applications/tree/main/project-20-nasa-explorers" }
+];
+
+// 🎛️ DOM Selectors for Navigation Buttons
 const grid = document.getElementById('projects-grid');
 const btnHtml = document.getElementById('show-html');
 const btnJs = document.getElementById('show-js');
 const btnAlgo = document.getElementById('show-algo');
+const btnAjax = document.getElementById('show-ajax');
 
+// 🏗️ Centralized Polymorphic Renderer
 function render(type) {
     grid.style.opacity = '0';
     
     setTimeout(() => {
         grid.innerHTML = '';
         let currentList;
+        
         if (type === 'html') currentList = myWork;
         else if (type === 'js') currentList = jsExercises;
-        else currentList = algoMastery;
+        else if (type === 'algo') currentList = algoMastery;
+        else currentList = ajaxProjects;
 
         currentList.forEach(p => {
             const isAlgo = type === 'algo';
+            const isAjax = type === 'ajax';
+            
+            let tagText = `Mission #${p.id}`;
+            if (isAlgo) tagText = `${p.id}`; 
+            if (isAjax) tagText = `App #${p.id}`;
+
             grid.innerHTML += `
             <div class="col-md-6 col-lg-4">
-                <div class="project-card ${isAlgo ? 'algo-card' : ''}">
-                    <span class="task-tag">${isAlgo ? 'Algorithm' : 'Mission'} #${p.id}</span>
+                <div class="project-card ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''}">
+                    <span class="task-tag">${tagText}</span>
                     <h3 class="card-title">${p.name}</h3>
                     <p class="card-desc">${p.desc}</p>
                     <div class="d-flex gap-2 mt-auto">
@@ -82,14 +107,16 @@ function render(type) {
     }, 200);
 }
 
-
+// 🎛️ Navigation Event Triggers
 btnHtml.onclick = () => { setActive(btnHtml); render('html'); };
 btnJs.onclick = () => { setActive(btnJs); render('js'); };
 btnAlgo.onclick = () => { setActive(btnAlgo); render('algo'); };
+btnAjax.onclick = () => { setActive(btnAjax); render('ajax'); };
 
 function setActive(activeBtn) {
-    [btnHtml, btnJs, btnAlgo].forEach(btn => btn.classList.remove('active'));
+    [btnHtml, btnJs, btnAlgo, btnAjax].forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
 }
 
+// Default Launch View
 render('html');

@@ -1,3 +1,6 @@
+/* ==========================================================================
+   📌 Core Architecture & Root Variables
+   ========================================================================== */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --glass-bg: rgba(255, 255, 255, 0.7);
@@ -5,7 +8,6 @@
     --dark-bg: #0f172a;
 }
 
-/* حل مشكلة العرض في الموبايل */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -20,6 +22,9 @@ body {
     min-height: 100vh;
 }
 
+/* ==========================================================================
+   🚀 Hero Section & Navigation Tabs
+   ========================================================================== */
 .hero-section {
     padding: 100px 0;
     background: var(--primary-gradient);
@@ -27,7 +32,6 @@ body {
     margin-bottom: 60px;
 }
 
-/* تنسيق الأزرار للموبايل */
 .tab-container {
     display: inline-flex;
     background: rgba(255, 255, 255, 0.05);
@@ -58,7 +62,9 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* تنسيق الكروت الأساسي */
+/* ==========================================================================
+   🎨 Standard Glassmorphism Card Style (HTML/CSS & JS Labs)
+   ========================================================================== */
 .project-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -78,22 +84,12 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-.algo-card {
-    background: #111827 !important; /* أسود فحمي */
-    border-left: 5px solid #fbbf24 !important; /* خط ذهبي */
-    border-right: 1px solid rgba(251, 191, 36, 0.1); /* لمسة ذهبية خفيفة من اليمين */
+.project-card:hover .card-title {
+    color: #0f172a !important;
 }
 
-.algo-card .task-tag {
-    color: #fbbf24 !important;
-}
-
-.algo-card .card-title {
-    color: #f3f4f6 !important;
-}
-
-.algo-card .btn-launch {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+.project-card:hover .card-desc {
+    color: #334155 !important;
 }
 
 .task-tag {
@@ -111,12 +107,14 @@ body {
     font-weight: 800;
     font-size: 1.4rem;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
 .card-desc {
     color: #475569;
     font-size: 0.9rem;
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 .btn-launch {
@@ -132,14 +130,26 @@ body {
     transition: 0.3s;
 }
 
-/* تعديل الموبايل */
-@media (max-width: 768px) {
-    .tab-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+.btn-launch:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   🧠 Algorithm Premium Card Style (Coal & Gold)
+   ========================================================================== */
+.algo-card {
+    background: #111827 !important; 
+    border-left: 5px solid #fbbf24 !important; 
+    border-right: 1px solid rgba(251, 191, 36, 0.1) !important;
+}
+
+.algo-card .task-tag {
+    color: #fbbf24 !important;
+}
+
+.algo-card .card-title {
+    color: #f3f4f6 !important;
 }
 
 .algo-card .card-desc {
@@ -147,8 +157,79 @@ body {
     font-size: 0.85rem;
 }
 
+.algo-card .btn-launch {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
 .algo-card:hover {
     transform: translateY(-10px) scale(1.03) !important;
-    background-color: rgba(30, 41, 59, 1) !important; /* لون ثابت وواضح عند الحوم بالفأرة */
+    background-color: #1e293b !important; 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.algo-card .btn-outline-dark {
+    color: #fbbf24 !important;
+    border-color: #fbbf24 !important;
+}
+
+.algo-card .btn-outline-dark:hover {
+    background-color: #fbbf24 !important;
+    color: #111827 !important;
+}
+
+/* ==========================================================================
+   🌐 AJAX & API Cyberpunk Card Style (Deep Cyber & Neon Blue)
+   ========================================================================== */
+.ajax-card {
+    background: #0b1329 !important; 
+    border-left: 5px solid #00f2fe !important; 
+    border-right: 1px solid rgba(0, 242, 254, 0.1) !important;
+}
+
+.ajax-card .task-tag {
+    color: #00f2fe !important;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+.ajax-card .card-title {
+    color: #ffffff !important;
+}
+
+.ajax-card .card-desc {
+    color: #cbd5e1 !important;
+    font-size: 0.85rem;
+}
+
+.ajax-card .btn-launch {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+}
+
+.ajax-card:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+    background-color: #1c2541 !important; 
+    box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2) !important;
+    border-left-color: #00c6ff !important;
+}
+
+.ajax-card .btn-outline-dark {
+    color: #00f2fe !important;
+    border-color: #00f2fe !important;
+}
+
+.ajax-card .btn-outline-dark:hover {
+    background-color: #00f2fe !important;
+    color: #0b1329 !important;
+}
+
+/* ==========================================================================
+   📱 Responsive Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+    .tab-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
 }
