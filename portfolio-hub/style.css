@@ -177,6 +177,25 @@ body {
     color: #111827 !important;
 }
 
+/* 🧠 Custom High-Contrast Weekly Headers for Algorithm Lab (Dark Mode Optimized) */
+.week-sprint-header {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-left: 5px solid #fbbf24;
+    padding-left: 14px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
+}
+
+.week-sprint-divider {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #fbbf24, transparent);
+    opacity: 0.3;
+}
+
 /* ==========================================================================
    🌐 AJAX & API Cyberpunk Card Style (Deep Cyber & Neon Blue)
    ========================================================================== */
