@@ -12,7 +12,7 @@ The platform maps and dynamically visualizes four distinct engineering modules:
 
 1. **🎨 HTML & CSS Projects**: Legacy and modern visual layout engineering (clones of Google 1998, Twitter, Airbnb, and structural Box Model challenges).
 2. **⚡ JavaScript Labs**: Core functional browser automation, native events tracking, dynamic element injection, and full states tracking (such as the Glassmorphic Pomodoro Engine).
-3. **🧠 Algorithm Lab**: Numerical computing logic blocks and trace implementations running linear execution complexities across Basic, Intermediate, and Professional thresholds.
+3. **🧠 Algorithm Lab**: Numerical computing logic blocks and trace implementations running linear execution complexities across Basic, Intermediate, Professional, and Sorting thresholds.
 4. **🌐 AJAX & API Apps**: Advanced client-server asynchronous platforms fetching runtime server payloads from remote RESTful endpoints.
 
 ---
