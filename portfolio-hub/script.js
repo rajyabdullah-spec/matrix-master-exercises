@@ -77,6 +77,8 @@ const btnHtml = document.getElementById('show-html');
 const btnJs = document.getElementById('show-js');
 const btnAlgo = document.getElementById('show-algo');
 const btnAjax = document.getElementById('show-ajax');
+const searchInput = document.getElementById('search-input');
+const searchClearBtn = document.getElementById('search-clear-btn');
 
 // 🏗️ Helper Function to build Single Project Card HTML Template
 function createCardHTML(p, type) {
@@ -103,6 +105,20 @@ function createCardHTML(p, type) {
             </div>
         </div>
     </div>`;
+}
+
+// 📊 Function to dynamically calculate and highlight statistics based on real data arrays
+
+function initDynamicStats() {
+    const totalAssignments = myWork.length + jsExercises.length + ajaxProjects.length;
+    let totalAlgorithms = 0;
+    
+    Object.keys(algoMasteryGroups).forEach(week => {
+        totalAlgorithms += algoMasteryGroups[week].length;
+    });
+
+    document.getElementById('assignments-count').textContent = totalAssignments;
+    document.getElementById('algorithms-count').textContent = totalAlgorithms;
 }
 
 function render(type) {
@@ -140,16 +156,86 @@ function render(type) {
     }, 200);
 }
 
+// 🔍 Smart search filter engine and harmonious linking with multiple sections
+function handleSearch(query) {
+    const cleanQuery = query.toLowerCase().trim();
+    
+    if (cleanQuery === "") {
+        searchClearBtn.style.display = "none";
+        // استعادة العرض الطبيعي بناءً على القسم المفتوح حالياً
+        const activeTab = document.querySelector('.tab-btn.active').id;
+        if (activeTab === 'show-html') render('html');
+        else if (activeTab === 'show-js') render('js');
+        else if (activeTab === 'show-algo') render('algo');
+        else if (activeTab === 'show-ajax') render('ajax');
+        return;
+    }
+
+    searchClearBtn.style.display = "block";
+    grid.style.opacity = '0';
+
+    setTimeout(() => {
+        grid.innerHTML = '';
+        let hasResults = false;
+
+        // 1. Track matching algorithms and display them in their original weekly tabs
+        Object.keys(algoMasteryGroups).forEach(weekTitle => {
+            const matches = algoMasteryGroups[weekTitle].filter(p => 
+                p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery)
+            );
+            if (matches.length > 0) {
+                hasResults = true;
+                grid.innerHTML += `
+                <div class="col-12 mt-4 mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <h4 class="m-0 week-sprint-header">${weekTitle}</h4>
+                        <div class="week-sprint-divider"></div>
+                    </div>
+                </div>`;
+                matches.forEach(p => grid.innerHTML += createCardHTML(p, 'algo'));
+            }
+        });
+
+        // 2. Track and filter other projects (HTML, JS, AJAX) and inject them with their original styles
+        const htmlMatches = myWork.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
+        const jsMatches = jsExercises.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
+        const ajaxMatches = ajaxProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
+
+        if (htmlMatches.length > 0 || jsMatches.length > 0 || ajaxMatches.length > 0) {
+            hasResults = true;
+        }
+
+        htmlMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'html'));
+        jsMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'js'));
+        ajaxMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'ajax'));
+
+        // Notification for no matching results for the entered text
+        if (!hasResults) {
+            grid.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <p class="fs-4 text-secondary">No results found for "${query}"</p>
+                <p class="text-muted small">Try checking the spelling or using other tech keywords.</p>
+            </div>`;
+        }
+        grid.style.opacity = '1';
+    }, 150);
+}
+
 // 🎛️ Navigation Event Triggers
-btnHtml.onclick = () => { setActive(btnHtml); render('html'); };
-btnJs.onclick = () => { setActive(btnJs); render('js'); };
-btnAlgo.onclick = () => { setActive(btnAlgo); render('algo'); };
-btnAjax.onclick = () => { setActive(btnAjax); render('ajax'); };
+btnHtml.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnHtml); render('html'); };
+btnJs.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnJs); render('js'); };
+btnAlgo.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAlgo); render('algo'); };
+btnAjax.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAjax); render('ajax'); };
+
+// 🔍 Search Event Listeners
+searchInput.oninput = (e) => handleSearch(e.target.value);
+searchClearBtn.onclick = () => { searchInput.value = ""; handleSearch(""); };
 
 function setActive(activeBtn) {
     [btnHtml, btnJs, btnAlgo, btnAjax].forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
 }
 
-// Default Launch View
+// Execution initialization pipeline
+initDynamicStats();
 render('html');
