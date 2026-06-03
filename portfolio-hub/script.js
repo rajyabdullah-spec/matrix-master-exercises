@@ -58,7 +58,8 @@ const algoMasteryGroups = {
         { id: "Professional-05", name: "Friday: Sum All Odd Fibonacci", desc: "Generating Fibonacci series limits and safely filtering odd integer totals using custom modular logic boundaries and dual structural paradigms.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/03-Professional-Algorithms/friday-sum-odd-fibonacci.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
     ],
     "Week 04: Sorting Algorithms": [
-        { id: "Sorting-01", name: "Monday: Bubble Sort Challenge", desc: "Implementing the core numerical bubble sorting mechanism using traditional double-nested loops and modern ES6 optimized early-exit flags.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/04-sorting-algorithms/monday-bubble-sort.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
+        { id: "Sorting-01", name: "Monday: Bubble Sort Challenge", desc: "Implementing the core numerical bubble sorting mechanism using traditional double-nested loops and modern ES6 optimized early-exit flags.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/04-sorting-algorithms/monday-bubble-sort.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+        { id: "Sorting-02", name: "Tuesday: Selection Sort Challenge", desc: "Repeated minimum index finding via linear scanning and execution of elements swapping using traditional variables and advanced ES6 destructured paradigms.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/04-sorting-algorithms/tuesday-selection-sort.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
     ]
 };
 
@@ -162,7 +163,7 @@ function handleSearch(query) {
     
     if (cleanQuery === "") {
         searchClearBtn.style.display = "none";
-        // استعادة العرض الطبيعي بناءً على القسم المفتوح حالياً
+
         const activeTab = document.querySelector('.tab-btn.active').id;
         if (activeTab === 'show-html') render('html');
         else if (activeTab === 'show-js') render('js');
