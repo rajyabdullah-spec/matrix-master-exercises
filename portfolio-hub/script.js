@@ -72,12 +72,22 @@ const ajaxProjects = [
     { id: "20", name: "NASA Exploration Space", desc: "Planetary exploration dashboard tracking NASA APOD API with polymorphic layout rendering supporting responsive Bootstrap context iFrames.", path: "https://rajyabdullah-spec.github.io/ajax-api-applications/project-20-nasa-explorers/", github: "https://github.com/rajyabdullah-spec/ajax-api-applications/tree/main/project-20-nasa-explorers" }
 ];
 
+// 🎛️ 5. Node.js & ExpressJS Backend Engine Evolution (node-backend-playground)
+const backendProjects = [
+    { id: "01", name: "Express.js & EJS Foundations", desc: "Mastering core backend basics: server initialization, routing pipelines, custom middleware usage (Morgan logger), static file serving, and dynamic page rendering via EJS template engines.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#node-js--expressjs-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/01-express-ejs-basics" },
+    { id: "02", name: "The Timeline: In-Memory Data", desc: "First iteration of the timeline application. Implemented algorithmic data processing to handle local structures and sort user feeds in a strict reverse-chronological sequence without database dependencies.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-2-03-the-timeline-v2", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/02-the-timeline" },
+    { id: "03", name: "The Timeline: Cloud MVC Architecture", desc: "Transitioning the monolith into a full Model-View-Controller (MVC) design pattern. Integrated MongoDB Atlas cloud database via Mongoose ODM to execute secure CRUD operations and rigid schema validations.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-2-03-the-timeline-v2", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/03-the-timeline-v2" },
+    { id: "04", name: "The Timeline: Relational Sub-Resources", desc: "Advanced backend iteration mapping relational database architectures. Engineered a secondary sub-collection schema for user comments using ObjectId references, backed by automated cascading depletions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-3-04-the-timeline-v3", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/04-the-timeline-v3" },
+    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-restful-api-specifications--endpoints-version-4", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4" }
+];
+
 // 🎛️ DOM Selectors for Navigation Buttons
 const grid = document.getElementById('projects-grid');
 const btnHtml = document.getElementById('show-html');
 const btnJs = document.getElementById('show-js');
 const btnAlgo = document.getElementById('show-algo');
 const btnAjax = document.getElementById('show-ajax');
+const btnBackend = document.getElementById('show-backend');
 const searchInput = document.getElementById('search-input');
 const searchClearBtn = document.getElementById('search-clear-btn');
 
@@ -85,20 +95,32 @@ const searchClearBtn = document.getElementById('search-clear-btn');
 function createCardHTML(p, type) {
     const isAlgo = type === 'algo';
     const isAjax = type === 'ajax';
+    const isBackend = type === 'backend';
     
     let tagText = `Mission #${p.id}`;
     if (isAlgo) tagText = `${p.id}`; 
     if (isAjax) tagText = `App #${p.id}`;
+    
+    
+    if (isBackend) {
+        tagText = p.id === "01" ? "Core Basics" : `Timeline v${parseInt(p.id) - 1}`;
+    }
+
+    let launchText = 'Launch Demo';
+    if (isAlgo) launchText = 'View Logic';
+    if (isBackend) {
+        launchText = p.id === "05" ? 'View API Specs' : 'Read Architecture';
+    }
 
     return `
     <div class="col-md-6 col-lg-4">
-        <div class="project-card ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''}">
+        <div class="project-card ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''}">
             <span class="task-tag">${tagText}</span>
             <h3 class="card-title">${p.name}</h3>
             <p class="card-desc">${p.desc}</p>
             <div class="d-flex gap-2 mt-auto">
-                <a href="${p.path}" target="_blank" class="btn-launch flex-grow-1">${isAlgo ? 'View Logic' : 'Launch Demo'}</a>
-                <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="View Code">
+                <a href="${p.path}" target="_blank" class="btn-launch flex-grow-1">${launchText}</a>
+                <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="${isBackend ? 'View Source Code' : 'View Code'}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                     </svg>
@@ -109,9 +131,8 @@ function createCardHTML(p, type) {
 }
 
 // 📊 Function to dynamically calculate and highlight statistics based on real data arrays
-
 function initDynamicStats() {
-    const totalAssignments = myWork.length + jsExercises.length + ajaxProjects.length;
+    const totalAssignments = myWork.length + jsExercises.length + ajaxProjects.length + backendProjects.length;
     let totalAlgorithms = 0;
     
     Object.keys(algoMasteryGroups).forEach(week => {
@@ -146,6 +167,7 @@ function render(type) {
             let currentList;
             if (type === 'html') currentList = myWork;
             else if (type === 'js') currentList = jsExercises;
+            else if (type === 'backend') currentList = backendProjects;
             else currentList = ajaxProjects;
 
             currentList.forEach(p => {
@@ -169,6 +191,7 @@ function handleSearch(query) {
         else if (activeTab === 'show-js') render('js');
         else if (activeTab === 'show-algo') render('algo');
         else if (activeTab === 'show-ajax') render('ajax');
+        else if (activeTab === 'show-backend') render('backend');
         return;
     }
 
@@ -179,7 +202,6 @@ function handleSearch(query) {
         grid.innerHTML = '';
         let hasResults = false;
 
-        // 1. Track matching algorithms and display them in their original weekly tabs
         Object.keys(algoMasteryGroups).forEach(weekTitle => {
             const matches = algoMasteryGroups[weekTitle].filter(p => 
                 p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery)
@@ -197,20 +219,20 @@ function handleSearch(query) {
             }
         });
 
-        // 2. Track and filter other projects (HTML, JS, AJAX) and inject them with their original styles
         const htmlMatches = myWork.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
         const jsMatches = jsExercises.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
         const ajaxMatches = ajaxProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
+        const backendMatches = backendProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
 
-        if (htmlMatches.length > 0 || jsMatches.length > 0 || ajaxMatches.length > 0) {
+        if (htmlMatches.length > 0 || jsMatches.length > 0 || ajaxMatches.length > 0 || backendMatches.length > 0) {
             hasResults = true;
         }
 
         htmlMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'html'));
         jsMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'js'));
         ajaxMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'ajax'));
+        backendMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'backend'));
 
-        // Notification for no matching results for the entered text
         if (!hasResults) {
             grid.innerHTML = `
             <div class="col-12 text-center py-5">
@@ -227,13 +249,14 @@ btnHtml.onclick = () => { searchInput.value = ""; searchClearBtn.style.display =
 btnJs.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnJs); render('js'); };
 btnAlgo.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAlgo); render('algo'); };
 btnAjax.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAjax); render('ajax'); };
+if (btnBackend) { btnBackend.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnBackend); render('backend'); }; }
 
 // 🔍 Search Event Listeners
 searchInput.oninput = (e) => handleSearch(e.target.value);
 searchClearBtn.onclick = () => { searchInput.value = ""; handleSearch(""); };
 
 function setActive(activeBtn) {
-    [btnHtml, btnJs, btnAlgo, btnAjax].forEach(btn => btn.classList.remove('active'));
+    [btnHtml, btnJs, btnAlgo, btnAjax, btnBackend].forEach(btn => { if (btn) btn.classList.remove('active'); });
     activeBtn.classList.add('active');
 }
 

@@ -87,17 +87,16 @@ body {
 /* ==========================================================================
    🎯(Jitter-Free Hover Text Fix)
    ========================================================================== */
-
 .card-title, .card-desc {
     will-change: transform, opacity;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-.project-card:not(.algo-card):not(.ajax-card):hover .card-title {
+.project-card:not(.algo-card):not(.ajax-card):not(.backend-card):hover .card-title {
     color: #0f172a !important;
 }
-.project-card:not(.algo-card):not(.ajax-card):hover .card-desc {
+.project-card:not(.algo-card):not(.ajax-card):not(.backend-card):hover .card-desc {
     color: #334155 !important;
 }
 
@@ -115,6 +114,13 @@ body {
 }
 .project-card.ajax-card:hover .card-desc {
     color: #ffffff !important;
+}
+
+.project-card.backend-card:hover .card-title {
+    color: #e2e8f0 !important;
+}
+.project-card.backend-card:hover .card-desc {
+    color: #94a3b8 !important;
 }
 
 .task-tag {
@@ -263,6 +269,51 @@ body {
 .ajax-card .btn-outline-dark:hover {
     background-color: #00f2fe !important;
     color: #0b1329 !important;
+}
+
+/* ==========================================================================
+   📂 Backend Architecture Premium Card Style (Obsidian Dark & Clean Charcoal)
+   ========================================================================== */
+.backend-card {
+    background: #1e293b !important;
+    border-left: 5px solid #64748b !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.backend-card .task-tag {
+    color: #38bdf8 !important;
+}
+
+.backend-card .card-title {
+    color: #f1f5f9 !important;
+}
+
+.backend-card .card-desc {
+    color: #cbd5e1 !important;
+    font-size: 0.85rem;
+}
+
+.backend-card .btn-launch {
+    background: linear-gradient(135deg, #334155 0%, #0f172a 100%) !important;
+    border: 1px solid #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+.backend-card:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+    background-color: #0f172a !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+    border-left-color: #38bdf8 !important;
+}
+
+.backend-card .btn-outline-dark {
+    color: #38bdf8 !important;
+    border-color: #475569 !important;
+}
+
+.backend-card .btn-outline-dark:hover {
+    background-color: #38bdf8 !important;
+    color: #0f172a !important;
 }
 
 /* ==========================================================================
