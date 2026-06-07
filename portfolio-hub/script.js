@@ -78,7 +78,7 @@ const backendProjects = [
     { id: "02", name: "The Timeline: In-Memory Data", desc: "First iteration of the timeline application. Implemented algorithmic data processing to handle local structures and sort user feeds in a strict reverse-chronological sequence without database dependencies.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-2-03-the-timeline-v2", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/02-the-timeline" },
     { id: "03", name: "The Timeline: Cloud MVC Architecture", desc: "Transitioning the monolith into a full Model-View-Controller (MVC) design pattern. Integrated MongoDB Atlas cloud database via Mongoose ODM to execute secure CRUD operations and rigid schema validations.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-2-03-the-timeline-v2", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/03-the-timeline-v2" },
     { id: "04", name: "The Timeline: Relational Sub-Resources", desc: "Advanced backend iteration mapping relational database architectures. Engineered a secondary sub-collection schema for user comments using ObjectId references, backed by automated cascading depletions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-3-04-the-timeline-v3", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/04-the-timeline-v3" },
-    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4" }
+    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4",images: ["./assets/get-posts-200.gif","./assets/create-post-201.gif"]}
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -101,7 +101,6 @@ function createCardHTML(p, type) {
     if (isAlgo) tagText = `${p.id}`; 
     if (isAjax) tagText = `App #${p.id}`;
     
-    
     if (isBackend) {
         tagText = p.id === "01" ? "Core Basics" : `Timeline v${parseInt(p.id) - 1}`;
     }
@@ -112,12 +111,24 @@ function createCardHTML(p, type) {
         launchText = p.id === "05" ? 'View API Specs' : 'Read Architecture';
     }
 
+    let testSpecsBtnHTML = "";
+    if (isBackend && p.images && Array.isArray(p.images)) {
+        testSpecsBtnHTML = `
+            <button onclick="openPreviewModal('${p.images[0]}', '${p.images[1]}')" class="btn-test-specs" title="View Live Postman Verification Logs">
+                📸 View Postman Tests
+            </button>
+        `;
+    }
+
     return `
     <div class="col-md-6 col-lg-4">
         <div class="project-card ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''}">
             <span class="task-tag">${tagText}</span>
             <h3 class="card-title">${p.name}</h3>
             <p class="card-desc">${p.desc}</p>
+            
+            ${testSpecsBtnHTML}
+            
             <div class="d-flex gap-2 mt-auto">
                 <a href="${p.path}" target="_blank" class="btn-launch flex-grow-1">${launchText}</a>
                 <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="${isBackend ? 'View Source Code' : 'View Code'}">
@@ -258,6 +269,45 @@ searchClearBtn.onclick = () => { searchInput.value = ""; handleSearch(""); };
 function setActive(activeBtn) {
     [btnHtml, btnJs, btnAlgo, btnAjax, btnBackend].forEach(btn => { if (btn) btn.classList.remove('active'); });
     activeBtn.classList.add('active');
+}
+
+// 🎬 Production-Grade Glassmorphism Modal Lightbox Engine
+function openPreviewModal(img1, img2) {
+    const modalHTML = `
+    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in">
+        <div class="custom-modal-content animate-slide-up">
+            <div class="custom-modal-header">
+                <h4 class="m-0 text-white">📊 Postman Execution Log Verification</h4>
+                <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="custom-modal-body">
+                <div class="row g-4">
+                    <div class="col-md-6 text-center">
+                        <small class="modal-preview-tag">⚡ GET /api/get-posts (Status 200)</small>
+                        <img src="${img1}" class="img-fluid modal-preview-gif" alt="GET Request">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <small class="modal-preview-tag">🚀 POST /api/create-post (Status 201)</small>
+                        <img src="${img2}" class="img-fluid modal-preview-gif" alt="POST Request">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    document.body.style.overflow = 'hidden';
+}
+
+function closePreviewModal() {
+    const modal = document.getElementById('custom-lightbox-modal');
+    if (modal) {
+        modal.classList.add('animate-fade-out');
+        setTimeout(() => {
+            modal.remove();
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
 }
 
 // Execution initialization pipeline
