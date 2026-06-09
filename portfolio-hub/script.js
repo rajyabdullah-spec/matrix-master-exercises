@@ -62,7 +62,8 @@ const algoMasteryGroups = {
         { id: "Sorting-02", name: "Tuesday: Selection Sort Challenge", desc: "Repeated minimum index finding via linear scanning and execution of elements swapping using traditional variables and advanced ES6 destructured paradigms.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/04-sorting-algorithms/tuesday-selection-sort.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
     ],
     "Week 05: Recursion Algorithms": [
-        { id: "Recursion-01", name: "Monday: rFactorial vs iFactorial", desc: "Calculating numerical factorials through two distinct computer science computational methods: memory efficient iterative loops and functional call stack winding recursion.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/monday-factorial.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
+        { id: "Recursion-01", name: "Monday: rFactorial vs iFactorial", desc: "Calculating numerical factorials through two distinct computer science computational methods: memory efficient iterative loops and functional call stack winding recursion.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/monday-factorial.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+        { id: "Recursion-02", name: "Tuesday: Bunny Ears Challenge", desc: "Computing total floppy ears across linear bunny collections recursively without loops or multiplication, visualizing functional stack depth accumulation.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/tuesday-bunny-ears.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
     ]
 };
 
