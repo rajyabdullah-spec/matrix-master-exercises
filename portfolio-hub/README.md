@@ -14,7 +14,7 @@ The platform maps and dynamically visualizes five distinct engineering modules:
 2. **⚡ JavaScript Labs**: Core functional browser automation, native events tracking, dynamic element injection, and full states tracking (such as the Glassmorphic Pomodoro Engine).
 3. **🧠 Algorithm Lab**: Numerical computing logic blocks and trace implementations running linear execution complexities across Basic, Intermediate, Professional, and Sorting thresholds.
 4. **🌐 AJAX & API Apps**: Advanced client-server asynchronous platforms fetching runtime server payloads from remote RESTful endpoints.
-5. **🎛️ Backend Engines**: The evolutionary track of server-side architecture—progressing from fundamental Node.js/Express.js routing and monolithic MVC structures with MongoDB Atlas, to strictly validated, headless RESTful API data providers. **(The final stable engine is fully deployed and accessible via live cloud endpoints).**
+5. **🎛️ Backend Engines**: The evolutionary track of server-side architecture—progressing from fundamental Node.js/Express.js routing and monolithic MVC structures with MongoDB Atlas, to strictly validated headless RESTful API data providers, and concluding with a secure full-stack ecosystem protected by **JSON Web Tokens (JWT) authentication and cookie session controls**. **(The final production engine is fully deployed and accessible via live cloud endpoints).**
 
 ---
 
@@ -23,6 +23,7 @@ The platform maps and dynamically visualizes five distinct engineering modules:
 * **Structural Layout:** HTML5 Semantic Markup integrated with **Bootstrap 5 Responsive Grid System** for fluid viewport scalability.
 * **Style & Interaction:** Pure Modular CSS3 implementing fluid typography layouts, strict viewport isolation, micro-interactions, and hardware-accelerated state transitions.
 * **Reactive Logic:** Core ECMAScript 6+ (Vanilla JavaScript) driven by an optimization-focused Polymorphic Rendering Layer, caching states, managing dynamic DOM refactoring, and enforcing asynchronous event loops.
+* **Backend Visibility (Showcased Ecosystem):** Node.js runtime, Express.js framework, Mongoose ODM (MongoDB Atlas), JSON Web Tokens (JWT) for secure session gating, and Dotenv for environmental abstraction.
 
 ---
 
@@ -45,7 +46,7 @@ To inspect the source code layers or run this portfolio interface locally on you
 
 ```bash
 # Clone the repository payload
-git clone https://github.com/rajyabdullah-spec/matrix-master-exercises.git
+git clone [https://github.com/rajyabdullah-spec/matrix-master-exercises.git](https://github.com/rajyabdullah-spec/matrix-master-exercises.git)
 
 # Navigate into the specific portfolio subdirectory
 cd matrix-master-exercises/portfolio-hub

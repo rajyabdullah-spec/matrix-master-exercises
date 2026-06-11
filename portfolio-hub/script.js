@@ -79,10 +79,11 @@ const ajaxProjects = [
 // 🎛️ 5. Node.js & ExpressJS Backend Engine Evolution (node-backend-playground)
 const backendProjects = [
     { id: "01", name: "Express.js & EJS Foundations", desc: "Mastering core backend basics: server initialization, routing pipelines, custom middleware usage (Morgan logger), static file serving, and dynamic page rendering via EJS template engines.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#node-js--expressjs-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/01-express-ejs-basics" },
-    { id: "02", name: "The Timeline: In-Memory Data", desc: "First iteration of the timeline application. Implemented algorithmic data processing to handle local structures and sort user feeds in a strict reverse-chronological sequence without database dependencies.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-2-03-the-timeline-v2", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/02-the-timeline" },
-    { id: "03", name: "The Timeline: Cloud MVC Architecture", desc: "Transitioning the monolith into a full Model-View-Controller (MVC) design pattern. Integrated MongoDB Atlas cloud database via Mongoose ODM to execute secure CRUD operations and rigid schema validations.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-2-03-the-timeline-v2", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/03-the-timeline-v2" },
-    { id: "04", name: "The Timeline: Relational Sub-Resources", desc: "Advanced backend iteration mapping relational database architectures. Engineered a secondary sub-collection schema for user comments using ObjectId references, backed by automated cascading depletions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground#-key-features-in-version-3-04-the-timeline-v3", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/04-the-timeline-v3" },
-    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4",images: ["./assets/get-posts-200.gif","./assets/create-post-201.gif"]}
+    { id: "02", name: "The Timeline: In-Memory Data", desc: "First iteration of the timeline application. Implemented algorithmic data processing to handle local structures and sort user feeds in a strict reverse-chronological sequence without database dependencies.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/02-the-timeline" },
+    { id: "03", name: "The Timeline: Cloud MVC Architecture", desc: "Transitioning the monolith into a full Model-View-Controller (MVC) design pattern. Integrated MongoDB Atlas cloud database via Mongoose ODM to execute secure CRUD operations and rigid schema validations.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/03-the-timeline-v2" },
+    { id: "04", name: "The Timeline: Relational Sub-Resources", desc: "Advanced backend iteration mapping relational database architectures. Engineered a secondary sub-collection schema for user comments using ObjectId references, backed by automated cascading depletions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/04-the-timeline-v3" },
+    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4", images: ["./assets/get-posts-200.gif", "./assets/create-post-201.gif"] },
+    { id: "06", name: "The Timeline: Secure JWT Full-Stack", desc: "The production milestone of the timeline. Engineered a complete secure session infrastructure using JSON Web Tokens (JWT) cookies, custom authentication walls, environment variable masking (.env), virtual populate, and UI layout scroll memory preservation.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/06-the-timeline-v5" }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -112,7 +113,13 @@ function createCardHTML(p, type) {
     let launchText = 'Launch Demo';
     if (isAlgo) launchText = 'View Logic';
     if (isBackend) {
-        launchText = p.id === "05" ? 'View API Specs' : 'Read Architecture';
+        if (p.id === "05") {
+            launchText = 'Read API Docs'; // 📄 زر مخصص للإصدار الرابع يشير للتوثيق
+        } else if (p.id === "06") {
+            launchText = 'Launch Live App'; // 🚀 زر مخصص للإصدار الخامس يفتح التطبيق الحي
+        } else {
+            launchText = 'Read Architecture';
+        }
     }
 
     let testSpecsBtnHTML = "";
