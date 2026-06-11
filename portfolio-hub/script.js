@@ -84,8 +84,9 @@ const backendProjects = [
     { id: "02", name: "The Timeline: In-Memory Data", desc: "First iteration of the timeline application. Implemented algorithmic data processing to handle local structures and sort user feeds in a strict reverse-chronological sequence without database dependencies.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/02-the-timeline" },
     { id: "03", name: "The Timeline: Cloud MVC Architecture", desc: "Transitioning the monolith into a full Model-View-Controller (MVC) design pattern. Integrated MongoDB Atlas cloud database via Mongoose ODM to execute secure CRUD operations and rigid schema validations.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/03-the-timeline-v2" },
     { id: "04", name: "The Timeline: Relational Sub-Resources", desc: "Advanced backend iteration mapping relational database architectures. Engineered a secondary sub-collection schema for user comments using ObjectId references, backed by automated cascading depletions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/04-the-timeline-v3" },
-    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4", images: ["./assets/get-posts-200.gif", "./assets/create-post-201.gif"] },
-    { id: "06", name: "The Timeline: Secure JWT Full-Stack", desc: "The production milestone of the timeline. Engineered a complete secure session infrastructure using JSON Web Tokens (JWT) cookies, custom authentication walls, environment variable masking (.env), virtual populate, and UI layout scroll memory preservation.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/06-the-timeline-v5" }
+    { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4", images: ["https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/05-the-timeline-v4/assets/get-posts-200.gif", "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/05-the-timeline-v4/assets/create-post-201.gif"] },
+    { id: "06", name: "The Timeline: Secure JWT Full-Stack", desc: "The production milestone of the timeline. Engineered a complete secure session infrastructure using JSON Web Tokens (JWT) cookies, custom authentication walls, environment variable masking (.env), virtual populate, and UI layout scroll memory preservation.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/06-the-timeline-v5" },
+    { id: "07", name: "NYT MVC Architecture", desc: "A complete Full-Stack MVC application with strict backend validation, isolated EJS views, and MongoDB Atlas cloud integration.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/07-demo-challenge-one", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/07-demo-challenge-one/assets/project-demo.gif", title: "NYT MVC Application Cycle"} }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -109,23 +110,37 @@ function createCardHTML(p, type) {
     if (isAjax) tagText = `App #${p.id}`;
     
     if (isBackend) {
-        tagText = p.id === "01" ? "Core Basics" : `Timeline v${parseInt(p.id) - 1}`;
+        if (p.id === "01") {
+            tagText = "Core Basics";
+        } else if (p.id === "07") {
+            tagText = "Demo Challenge 1";
+        } else {
+            tagText = `Timeline v${parseInt(p.id) - 1}`;
+        }
     }
 
     let launchText = 'Launch Demo';
     if (isAlgo) launchText = 'View Logic';
     if (isBackend) {
         if (p.id === "05") {
-            launchText = 'Read API Docs'; // 📄 زر مخصص للإصدار الرابع يشير للتوثيق
+            launchText = 'Read API Docs'; 
         } else if (p.id === "06") {
-            launchText = 'Launch Live App'; // 🚀 زر مخصص للإصدار الخامس يفتح التطبيق الحي
+            launchText = 'Launch Live App'; 
+        } else if (p.id === "07") {
+            launchText = 'Local Project'; 
         } else {
             launchText = 'Read Architecture';
         }
     }
 
     let testSpecsBtnHTML = "";
-    if (isBackend && p.images && Array.isArray(p.images)) {
+    if (isBackend && p.singleGif) {
+        testSpecsBtnHTML = `
+            <button onclick="showGifModal('${p.singleGif.url}', '${p.singleGif.title}')" class="btn-test-specs" title="View Project Demo">
+                🎬 View Demo Execution
+            </button>
+        `;
+    } else if (isBackend && p.images && Array.isArray(p.images)) {
         testSpecsBtnHTML = `
             <button onclick="openPreviewModal('${p.images[0]}', '${p.images[1]}')" class="btn-test-specs" title="View Live Postman Verification Logs">
                 📸 View Postman Tests
@@ -304,6 +319,25 @@ function openPreviewModal(img1, img2) {
                         <img src="${img2}" class="img-fluid modal-preview-gif" alt="POST Request">
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>`;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    document.body.style.overflow = 'hidden';
+}
+
+// 🎬 Single Image Preview Modal Engine
+function showGifModal(gifUrl, title) {
+    const modalHTML = `
+    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in">
+        <div class="custom-modal-content animate-slide-up" style="max-width: 800px;">
+            <div class="custom-modal-header">
+                <h4 class="m-0 text-white">🎬 ${title}</h4>
+                <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="custom-modal-body text-center">
+                <img src="${gifUrl}" class="img-fluid rounded shadow" alt="Project Demo" style="max-height: 70vh; width: 100%; object-fit: cover;">
             </div>
         </div>
     </div>`;

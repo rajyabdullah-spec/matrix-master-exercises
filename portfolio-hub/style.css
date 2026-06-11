@@ -509,3 +509,8 @@ body {
         gap: 10px;
     }
 }
+.custom-copyright {
+    color: #94a3b8 !important;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
