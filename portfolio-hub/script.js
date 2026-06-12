@@ -66,7 +66,8 @@ const algoMasteryGroups = {
         { id: "Recursion-02", name: "Tuesday: Bunny Ears Challenge", desc: "Computing total floppy ears across linear bunny collections recursively without loops or multiplication, visualizing functional stack depth accumulation.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/tuesday-bunny-ears.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
         { id: "Recursion-03", name: "Wednesday: Power N", desc: "Computing base to the n power recursively without using loops, visualizing functional structural execution flow.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/wednesday-powern.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
         { id: "Recursion-04", name: "Thursday: iFib vs rFib", desc: "Define both iterative and recursive methods that return the nth Fibonacci number synchronized with required test specification bounds.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/thursday-fibonacci.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
-        { id: "Recursion-05", name: "Friday: r Triangle", desc: "Compute recursively the total number of blocks in a triangle with given rows through stack aggregation and sequential workflows.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/friday-triangle.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },    ]
+        { id: "Recursion-05", name: "Friday: r Triangle", desc: "Compute recursively the total number of blocks in a triangle with given rows through stack aggregation and sequential workflows.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/friday-triangle.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
+    ]
 };
 
 // 🌐 4. Dynamic Web Applications (AJAX & APIs Pipeline)
@@ -86,7 +87,8 @@ const backendProjects = [
     { id: "04", name: "The Timeline: Relational Sub-Resources", desc: "Advanced backend iteration mapping relational database architectures. Engineered a secondary sub-collection schema for user comments using ObjectId references, backed by automated cascading depletions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/04-the-timeline-v3" },
     { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4", images: ["https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/05-the-timeline-v4/assets/get-posts-200.gif", "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/05-the-timeline-v4/assets/create-post-201.gif"] },
     { id: "06", name: "The Timeline: Secure JWT Full-Stack", desc: "The production milestone of the timeline. Engineered a complete secure session infrastructure using JSON Web Tokens (JWT) cookies, custom authentication walls, environment variable masking (.env), virtual populate, and UI layout scroll memory preservation.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/06-the-timeline-v5" },
-    { id: "07", name: "NYT MVC Architecture", desc: "A complete Full-Stack MVC application with strict backend validation, isolated EJS views, and MongoDB Atlas cloud integration.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/07-demo-challenge-one", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/07-demo-challenge-one/assets/project-demo.gif", title: "NYT MVC Application Cycle"} }
+    { id: "07", name: "NYT MVC Architecture", desc: "A complete Full-Stack MVC application with strict backend validation, isolated EJS views, and MongoDB Atlas cloud integration.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/07-demo-challenge-one", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/07-demo-challenge-one/assets/project-demo.gif", title: "NYT MVC Application Cycle"} },
+    { id: "08", name: "Welcome App MVC", desc: "A secure, highly-tuned Welcome App engineered using full-stack Node.js MVC architecture, custom routing pipelines, encrypted database storage, and fluid UI interfaces.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/08-demo-challenge-two", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/08-demo-challenge-two/assets/Demo2.gif", title: "Welcome App MVC Application Cycle"} }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -114,6 +116,8 @@ function createCardHTML(p, type) {
             tagText = "Core Basics";
         } else if (p.id === "07") {
             tagText = "Demo Challenge 1";
+        } else if (p.id === "08") {
+            tagText = "Demo Challenge 2";
         } else {
             tagText = `Timeline v${parseInt(p.id) - 1}`;
         }
@@ -126,7 +130,7 @@ function createCardHTML(p, type) {
             launchText = 'Read API Docs'; 
         } else if (p.id === "06") {
             launchText = 'Launch Live App'; 
-        } else if (p.id === "07") {
+        } else if (p.id === "07" || p.id === "08") {
             launchText = 'Local Project'; 
         } else {
             launchText = 'Read Architecture';
@@ -136,13 +140,13 @@ function createCardHTML(p, type) {
     let testSpecsBtnHTML = "";
     if (isBackend && p.singleGif) {
         testSpecsBtnHTML = `
-            <button onclick="showGifModal('${p.singleGif.url}', '${p.singleGif.title}')" class="btn-test-specs" title="View Project Demo">
+            <button onclick="showGifModal('${p.singleGif.url}', '${p.singleGif.title}')" class="btn-test-specs w-100 mb-2" title="View Project Demo">
                 🎬 View Demo Execution
             </button>
         `;
     } else if (isBackend && p.images && Array.isArray(p.images)) {
         testSpecsBtnHTML = `
-            <button onclick="openPreviewModal('${p.images[0]}', '${p.images[1]}')" class="btn-test-specs" title="View Live Postman Verification Logs">
+            <button onclick="openPreviewModal('${p.images[0]}', '${p.images[1]}')" class="btn-test-specs w-100 mb-2" title="View Live Postman Verification Logs">
                 📸 View Postman Tests
             </button>
         `;
@@ -150,20 +154,21 @@ function createCardHTML(p, type) {
 
     return `
     <div class="col-md-6 col-lg-4">
-        <div class="project-card ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''}">
+        <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''}">
             <span class="task-tag">${tagText}</span>
             <h3 class="card-title">${p.name}</h3>
             <p class="card-desc">${p.desc}</p>
             
-            ${testSpecsBtnHTML}
-            
-            <div class="d-flex gap-2 mt-auto">
-                <a href="${p.path}" target="_blank" class="btn-launch flex-grow-1">${launchText}</a>
-                <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="${isBackend ? 'View Source Code' : 'View Code'}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                </a>
+            <div class="mt-auto w-100">
+                ${testSpecsBtnHTML}
+                <div class="d-flex gap-2">
+                    <a href="${p.path}" target="_blank" class="btn-launch flex-grow-1">${launchText}</a>
+                    <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="${isBackend ? 'View Source Code' : 'View Code'}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>`;
