@@ -88,7 +88,8 @@ const backendProjects = [
     { id: "05", name: "The Timeline: Headless REST API Engine", desc: "Final transition into a clean headless backend infrastructure. Decoupled frontend renderings entirely to deliver pure JSON payloads, mapped standard HTTP status response codes, and verified operations using Postman.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/05-the-timeline-v4", images: ["https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/05-the-timeline-v4/assets/get-posts-200.gif", "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/05-the-timeline-v4/assets/create-post-201.gif"] },
     { id: "06", name: "The Timeline: Secure JWT Full-Stack", desc: "The production milestone of the timeline. Engineered a complete secure session infrastructure using JSON Web Tokens (JWT) cookies, custom authentication walls, environment variable masking (.env), virtual populate, and UI layout scroll memory preservation.", path: "https://timeline-api-v4.onrender.com", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/06-the-timeline-v5" },
     { id: "07", name: "NYT MVC Architecture", desc: "A complete Full-Stack MVC application with strict backend validation, isolated EJS views, and MongoDB Atlas cloud integration.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/07-demo-challenge-one", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/07-demo-challenge-one/assets/project-demo.gif", title: "NYT MVC Application Cycle"} },
-    { id: "08", name: "Welcome App MVC", desc: "A secure, highly-tuned Welcome App engineered using full-stack Node.js MVC architecture, custom routing pipelines, encrypted database storage, and fluid UI interfaces.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/08-demo-challenge-two", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/08-demo-challenge-two/assets/Demo2.gif", title: "Welcome App MVC Application Cycle"} }
+    { id: "08", name: "Welcome App MVC", desc: "A secure, highly-tuned Welcome App engineered using full-stack Node.js MVC architecture, custom routing pipelines, encrypted database storage, and fluid UI interfaces.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/08-demo-challenge-two", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/08-demo-challenge-two/assets/Demo2.gif", title: "Welcome App MVC Application Cycle"} },
+    { id: "09", name: "The Facebook MVC Challenge", desc: "A production-grade server-side micro-platform strictly enforcing MVC architecture, standalone custom routing paths, automated client deletion checks, and strict database field length restrictions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/09-The-Challenge-The-Facebook", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/09-The-Challenge-The-Facebook/assets/The-Challenge.gif", title: "The Facebook MVC Full Execution Cycle"} }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -118,6 +119,8 @@ function createCardHTML(p, type) {
             tagText = "Demo Challenge 1";
         } else if (p.id === "08") {
             tagText = "Demo Challenge 2";
+        } else if (p.id === "09") {
+            tagText = "Demo Challenge 3";
         } else {
             tagText = `Timeline v${parseInt(p.id) - 1}`;
         }
@@ -130,7 +133,7 @@ function createCardHTML(p, type) {
             launchText = 'Read API Docs'; 
         } else if (p.id === "06") {
             launchText = 'Launch Live App'; 
-        } else if (p.id === "07" || p.id === "08") {
+        } else if (p.id === "07" || p.id === "08" || p.id === "09") {
             launchText = 'Local Project'; 
         } else {
             launchText = 'Read Architecture';
