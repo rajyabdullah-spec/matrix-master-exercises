@@ -92,12 +92,20 @@ const backendProjects = [
     { id: "09", name: "The Facebook MVC Challenge", desc: "A production-grade server-side micro-platform strictly enforcing MVC architecture, standalone custom routing paths, automated client deletion checks, and strict database field length restrictions.", path: "https://github.com/rajyabdullah-spec/node-backend-playground", github: "https://github.com/rajyabdullah-spec/node-backend-playground/tree/main/09-The-Challenge-The-Facebook", singleGif: {url: "https://raw.githubusercontent.com/rajyabdullah-spec/node-backend-playground/main/09-The-Challenge-The-Facebook/assets/The-Challenge.gif", title: "The Facebook MVC Full Execution Cycle"} }
 ];
 
+// ⚛️ 6. React.js Advanced Architecture
+const reactProjects = [
+    { id: "01", name: "User Directory Client", desc: "Core knowledge of React lifecycle (componentDidMount) utilizing Axios to asynchronously fetch live user records from the RESTful JSONPlaceholder API.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/01-video-course-app/my-first-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio" },
+    { id: "02", name: "Hacker News Search Engine", desc: "Advanced implementation showcasing Server-side Search using the Hacker News API. Features strict immutability patterns and Conditional Rendering.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/02-hacker-news-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio" },
+    { id: "03", name: "Custom Styled ToDo App", desc: "A responsive task management tracker handling state synchronization across multiple controlled input streams, dynamic filtering, and a custom UI.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-01", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio" }
+];
+
 // 🎛️ DOM Selectors for Navigation Buttons
 const grid = document.getElementById('projects-grid');
 const btnHtml = document.getElementById('show-html');
 const btnJs = document.getElementById('show-js');
 const btnAlgo = document.getElementById('show-algo');
 const btnAjax = document.getElementById('show-ajax');
+const btnReact = document.getElementById('show-react');
 const btnBackend = document.getElementById('show-backend');
 const searchInput = document.getElementById('search-input');
 const searchClearBtn = document.getElementById('search-clear-btn');
@@ -107,10 +115,12 @@ function createCardHTML(p, type) {
     const isAlgo = type === 'algo';
     const isAjax = type === 'ajax';
     const isBackend = type === 'backend';
+    const isReact = type === 'react';
     
     let tagText = `Mission #${p.id}`;
     if (isAlgo) tagText = `${p.id}`; 
     if (isAjax) tagText = `App #${p.id}`;
+    if (isReact) tagText = `React App #${p.id}`;
     
     if (isBackend) {
         if (p.id === "01") {
@@ -120,7 +130,7 @@ function createCardHTML(p, type) {
         } else if (p.id === "08") {
             tagText = "Demo Challenge 2";
         } else if (p.id === "09") {
-            tagText = "Demo Challenge 3";
+            tagText = "Final Backend Capstone";
         } else {
             tagText = `Timeline v${parseInt(p.id) - 1}`;
         }
@@ -157,7 +167,7 @@ function createCardHTML(p, type) {
 
     return `
     <div class="col-md-6 col-lg-4">
-        <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''}">
+        <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''} ${isReact ? 'react-card' : ''}">
             <span class="task-tag">${tagText}</span>
             <h3 class="card-title">${p.name}</h3>
             <p class="card-desc">${p.desc}</p>
@@ -166,7 +176,7 @@ function createCardHTML(p, type) {
                 ${testSpecsBtnHTML}
                 <div class="d-flex gap-2">
                     <a href="${p.path}" target="_blank" class="btn-launch flex-grow-1">${launchText}</a>
-                    <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="${isBackend ? 'View Source Code' : 'View Code'}">
+                    <a href="${p.github}" target="_blank" class="btn btn-outline-dark rounded-3 d-flex align-items-center justify-content-center px-3" title="${isBackend || isReact ? 'View Source Code' : 'View Code'}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                         </svg>
@@ -179,7 +189,7 @@ function createCardHTML(p, type) {
 
 // 📊 Function to dynamically calculate and highlight statistics based on real data arrays
 function initDynamicStats() {
-    const totalAssignments = myWork.length + jsExercises.length + ajaxProjects.length + backendProjects.length;
+    const totalAssignments = myWork.length + jsExercises.length + ajaxProjects.length + backendProjects.length + reactProjects.length;
     let totalAlgorithms = 0;
     
     Object.keys(algoMasteryGroups).forEach(week => {
@@ -215,6 +225,7 @@ function render(type) {
             if (type === 'html') currentList = myWork;
             else if (type === 'js') currentList = jsExercises;
             else if (type === 'backend') currentList = backendProjects;
+            else if (type === 'react') currentList = reactProjects;
             else currentList = ajaxProjects;
 
             currentList.forEach(p => {
@@ -238,6 +249,7 @@ function handleSearch(query) {
         else if (activeTab === 'show-js') render('js');
         else if (activeTab === 'show-algo') render('algo');
         else if (activeTab === 'show-ajax') render('ajax');
+        else if (activeTab === 'show-react') render('react');
         else if (activeTab === 'show-backend') render('backend');
         return;
     }
@@ -269,15 +281,18 @@ function handleSearch(query) {
         const htmlMatches = myWork.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
         const jsMatches = jsExercises.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
         const ajaxMatches = ajaxProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
+        const reactMatches = reactProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
         const backendMatches = backendProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
 
-        if (htmlMatches.length > 0 || jsMatches.length > 0 || ajaxMatches.length > 0 || backendMatches.length > 0) {
+       
+        if (htmlMatches.length > 0 || jsMatches.length > 0 || ajaxMatches.length > 0 || reactMatches.length > 0 || backendMatches.length > 0) {
             hasResults = true;
         }
 
         htmlMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'html'));
         jsMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'js'));
         ajaxMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'ajax'));
+        reactMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'react')); 
         backendMatches.forEach(p => grid.innerHTML += createCardHTML(p, 'backend'));
 
         if (!hasResults) {
@@ -296,6 +311,7 @@ btnHtml.onclick = () => { searchInput.value = ""; searchClearBtn.style.display =
 btnJs.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnJs); render('js'); };
 btnAlgo.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAlgo); render('algo'); };
 btnAjax.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAjax); render('ajax'); };
+if (btnReact) { btnReact.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnReact); render('react'); }; }
 if (btnBackend) { btnBackend.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnBackend); render('backend'); }; }
 
 // 🔍 Search Event Listeners
@@ -303,7 +319,7 @@ searchInput.oninput = (e) => handleSearch(e.target.value);
 searchClearBtn.onclick = () => { searchInput.value = ""; handleSearch(""); };
 
 function setActive(activeBtn) {
-    [btnHtml, btnJs, btnAlgo, btnAjax, btnBackend].forEach(btn => { if (btn) btn.classList.remove('active'); });
+    [btnHtml, btnJs, btnAlgo, btnAjax, btnReact, btnBackend].forEach(btn => { if (btn) btn.classList.remove('active'); });
     activeBtn.classList.add('active');
 }
 

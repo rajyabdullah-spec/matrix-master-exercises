@@ -85,7 +85,7 @@ body {
 }
 
 /* ==========================================================================
-   🎯(Jitter-Free Hover Text Fix)
+   🎯 (Jitter-Free Hover Text Fix & Premium Neon Highlights)
    ========================================================================== */
 .card-title, .card-desc {
     will-change: transform, opacity;
@@ -93,16 +93,16 @@ body {
     -webkit-backface-visibility: hidden;
 }
 
-.project-card:not(.algo-card):not(.ajax-card):not(.backend-card):hover .card-title {
+.project-card:not(.algo-card):not(.ajax-card):not(.react-card):not(.backend-card):hover .card-title {
     color: #0f172a !important;
 }
-.project-card:not(.algo-card):not(.ajax-card):not(.backend-card):hover .card-desc {
+.project-card:not(.algo-card):not(.ajax-card):not(.react-card):not(.backend-card):hover .card-desc {
     color: #334155 !important;
 }
 
 .project-card.algo-card:hover .card-title {
     color: #fbbf24 !important;
-    text-shadow: 0 0 1px rgba(251, 191, 36, 0.2);
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
 }
 .project-card.algo-card:hover .card-desc {
     color: #ffffff !important;
@@ -110,19 +110,30 @@ body {
 
 .project-card.ajax-card:hover .card-title {
     color: #00f2fe !important;
-    text-shadow: 0 0 1px rgba(0, 242, 254, 0.2);
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
 }
 .project-card.ajax-card:hover .card-desc {
     color: #ffffff !important;
 }
 
-.project-card.backend-card:hover .card-title {
-    color: #e2e8f0 !important;
+.project-card.react-card:hover .card-title {
+    color: #61dafb !important;
+    text-shadow: 0 0 8px rgba(97, 218, 251, 0.5);
 }
-.project-card.backend-card:hover .card-desc {
-    color: #94a3b8 !important;
+.project-card.react-card:hover .card-desc {
+    color: #ffffff !important;
 }
 
+.project-card.backend-card:hover .card-title {
+    color: #ffffff !important;
+}
+.project-card.backend-card:hover .card-desc {
+    color: #cbd5e1 !important;
+}
+
+/* ==========================================================================
+   📂 Card Internal Layout Elements
+   ========================================================================== */
 .task-tag {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -313,6 +324,52 @@ body {
 
 .backend-card .btn-outline-dark:hover {
     background-color: #38bdf8 !important;
+    color: #0f172a !important;
+}
+
+/* ==========================================================================
+   📂 React.js Architecture Premium Card Style (Deep Navy & React Cyan)
+   ========================================================================== */
+.react-card {
+    background: #0f172a !important;
+    border-left: 5px solid #61dafb !important;
+    border-right: 1px solid rgba(97, 218, 251, 0.1) !important;
+}
+
+.react-card .task-tag {
+    color: #61dafb !important;
+    text-shadow: 0 0 8px rgba(97, 218, 251, 0.3);
+}
+
+.react-card .card-title {
+    color: #ffffff !important;
+}
+
+.react-card .card-desc {
+    color: #94a3b8 !important;
+    font-size: 0.85rem;
+}
+
+.react-card .btn-launch {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+    color: #ffffff !important;
+}
+
+.react-card:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+    background-color: #1e293b !important;
+    box-shadow: 0 20px 40px rgba(97, 218, 251, 0.15) !important;
+    border-left-color: #38bdf8 !important;
+}
+
+.react-card .btn-outline-dark {
+    color: #61dafb !important;
+    border-color: #61dafb !important;
+}
+
+.react-card .btn-outline-dark:hover {
+    background-color: #61dafb !important;
     color: #0f172a !important;
 }
 
@@ -509,6 +566,7 @@ body {
         gap: 10px;
     }
 }
+
 .custom-copyright {
     color: #94a3b8 !important;
     font-size: 0.9rem;
