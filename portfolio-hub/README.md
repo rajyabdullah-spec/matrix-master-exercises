@@ -24,7 +24,7 @@ The dashboard maps six distinct technical progression tracks, meticulously organ
 | :--- | :--- | :--- |
 | **🎨 01** | **HTML & CSS Projects** | Visual layout engineering, semantic compliance, and responsive frame architectures. |
 | **⚡ 02** | **JavaScript Labs** | Functional browser automation, OOP principles, and native DOM event tracking. |
-| **🧠 03** | **Algorithm Lab** | Sprint buckets tracking numerical computing logic blocks, sorting mechanisms, and recursive stack execution sequences. |
+| **🧠 03** | **Algorithm Lab** | Dynamic sprint buckets tracking numerical computing, sorting mechanisms, recursive stacks, and integrated **06-Challenges evaluation tracks**. |
 | **🌐 04** | **AJAX & API Apps** | Asynchronous client-server data pipelines utilizing XHR/Fetch API to process runtime RESTful payloads. |
 | **⚛️ 05** | **React.js Architecture** | Advanced state management, Axios server-side payloads, component lifecycles, and immutable data flows. |
 | **🎛️ 06** | **Backend Engines** | Full-stack server architectures, evolving through local data sorting, cloud MongoDB Atlas MVC patterns, headless REST APIs, secure JWT sessions, and the **Final Backend Capstone Challenge**. |

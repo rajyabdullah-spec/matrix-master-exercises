@@ -67,6 +67,10 @@ const algoMasteryGroups = {
         { id: "Recursion-03", name: "Wednesday: Power N", desc: "Computing base to the n power recursively without using loops, visualizing functional structural execution flow.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/wednesday-powern.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
         { id: "Recursion-04", name: "Thursday: iFib vs rFib", desc: "Define both iterative and recursive methods that return the nth Fibonacci number synchronized with required test specification bounds.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/thursday-fibonacci.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
         { id: "Recursion-05", name: "Friday: r Triangle", desc: "Compute recursively the total number of blocks in a triangle with given rows through stack aggregation and sequential workflows.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/05-recursion-algorithms/friday-triangle.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
+    ],
+    "06-Challenges: Bootcamp Evaluations": [
+        { id: "Challenge-01", name: "Demo Algorithm Challenge", desc: "Comprehensive review pipeline solving in-place array reversing, custom recursive array filtering, selection sort logic, and sub-array maximum scans under constraints.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/06-Challenges/demo-algorithm-challenge.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
+        { id: "Challenge-03", name: "Official Algorithms Challenge", desc: "The official assessment architecture. Features exclusive XOR divisibility filters, Fibonacci limit loops, and custom dual-pointer string validation.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/06-Challenges/AlgorithmsChallenge.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" }
     ]
 };
 
@@ -284,7 +288,6 @@ function handleSearch(query) {
         const reactMatches = reactProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
         const backendMatches = backendProjects.filter(p => p.name.toLowerCase().includes(cleanQuery) || p.desc.toLowerCase().includes(cleanQuery));
 
-       
         if (htmlMatches.length > 0 || jsMatches.length > 0 || ajaxMatches.length > 0 || reactMatches.length > 0 || backendMatches.length > 0) {
             hasResults = true;
         }
@@ -306,7 +309,7 @@ function handleSearch(query) {
     }, 150);
 }
 
-// 🎛️ Navigation Event Triggers
+// 🎛 *Navigation Event Triggers*
 btnHtml.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnHtml); render('html'); };
 btnJs.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnJs); render('js'); };
 btnAlgo.onclick = () => { searchInput.value = ""; searchClearBtn.style.display = "none"; setActive(btnAlgo); render('algo'); };
