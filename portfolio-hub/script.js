@@ -94,9 +94,9 @@ const backendProjects = [
 
 // ⚛️ 6. React.js Advanced Architecture
 const reactProjects = [
-    { id: "01", name: "User Directory Client", desc: "Core knowledge of React lifecycle (componentDidMount) utilizing Axios to asynchronously fetch live user records from the RESTful JSONPlaceholder API.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/01-video-course-app/my-first-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio" },
-    { id: "02", name: "Hacker News Search Engine", desc: "Advanced implementation showcasing Server-side Search using the Hacker News API. Features strict immutability patterns and Conditional Rendering.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/02-hacker-news-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio" },
-    { id: "03", name: "Custom Styled ToDo App", desc: "A responsive task management tracker handling state synchronization across multiple controlled input streams, dynamic filtering, and a custom UI.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-01", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio" }
+    { id: "01", name: "User Directory Client", desc: "Core knowledge of React lifecycle (componentDidMount) utilizing Axios to asynchronously fetch live user records from the RESTful JSONPlaceholder API.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/01-video-course-app/my-first-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/01-course-projects/01-video-course-app/my-first-app/src/assets/project-demo.gif", title: "User Directory Lifecycle Execution" } },
+    { id: "02", name: "Hacker News Search Engine", desc: "Advanced implementation showcasing Server-side Search using the Hacker News API. Features strict immutability patterns and Conditional Rendering.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/02-hacker-news-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/01-course-projects/02-hacker-news-app/src/assets/project-demo.gif", title: "Hacker News Immutable Search State" } },
+    { id: "03", name: "Custom Styled ToDo App", desc: "A responsive task management tracker handling state synchronization across multiple controlled input streams, dynamic filtering, and a custom UI.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-01", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-01/src/assets/project-demo.gif", title: "Custom Styled ToDo Fluid UI Execution" } }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -151,7 +151,7 @@ function createCardHTML(p, type) {
     }
 
     let testSpecsBtnHTML = "";
-    if (isBackend && p.singleGif) {
+    if ((isBackend || isReact) && p.singleGif) {
         testSpecsBtnHTML = `
             <button onclick="showGifModal('${p.singleGif.url}', '${p.singleGif.title}')" class="btn-test-specs w-100 mb-2" title="View Project Demo">
                 🎬 View Demo Execution

@@ -11,7 +11,7 @@ Instead of static pages, this dashboard is engineered as an **Agile Control Cent
 ### Core Engineering Capabilities:
 * **Dynamic Lifecycle Management**: Milestone elements are rendered and injected into the DOM in real-time from modular data arrays, ensuring a frictionless and responsive user experience.
 * **High-Performance Search Intelligence**: An integrated algorithmic search pipeline dynamically scans and filters multi-dimensional project datasets, providing zero-latency filtering across all technical tracks simultaneously.
-* **Asynchronous Media Lightbox Preview Engine**: Equipped with a custom asynchronous modal layer that seamlessly orchestrates multi-image Postman validation logs and standalone single project GIF execution previews.
+* **Asynchronous Media Lightbox Preview Engine**: Equipped with a custom asynchronous modal layer that seamlessly orchestrates multi-image Postman validation logs and standalone execution previews (GIFs) for both **React.js Architecture** and **Backend Engines**.
 * **Grid Alignment Balance Optimization**: Formatted with a unified component structural envelope ensuring that all operational action buttons and launch links maintain absolute horizontal alignment regardless of text length variations.
 
 ---
@@ -64,6 +64,8 @@ cd matrix-master-exercises/portfolio-hub
 👉 Open index.html in your browser via Live Server to view the fully optimized control center.
 ```
 ---
+## 👨‍💻 Designed & Developed By
 
-
-Engineered with precision by Raji Al-Abdullah - 2026
+* **Developer:** Raji Al-Abdullah
+* **Track:** Full-Stack Web Development
+* **Live Showcase:** [Visit My Live Portfolio Hub](https://rajyabdullah-spec.github.io/matrix-master-exercises/portfolio-hub/)
