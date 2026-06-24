@@ -33,10 +33,13 @@ The dashboard maps six distinct technical progression tracks, meticulously organ
 
 ## ⚛️ Deep Dive into the React.js Track
 
-The **React.js Architecture** module demonstrates a strict shift from imperative DOM coding into predictable, modern declarative user interfaces:
-* **User Directory Client (JSONPlaceholder):** Hands-on architecture mapping asynchronous RESTful data fetching inside lifecycle boundaries via Axios pipelines.
+The **React.js Architecture** module demonstrates a strict shift from imperative DOM coding into predictable, modern declarative user interfaces, properly split between foundational course frameworks and official assignments:
+
+* **Core Layout Framework:** Scalable foundational initialization of React architecture, applying clean component modularization and separated external layout strategies.
+* **World Countries & User Setup Hub:** Advanced data operations mastering functional hooks (`useState`, `useEffect`) and Axios fetching with controlled registration forms and live preview modules.
 * **Hacker News Search Engine:** High-performance data filtering showcasing server-side queries tracking immutable state structures and conditional rendering blocks.
-* **Custom Styled ToDo App:** Production-tuned state management orchestrating multi-controlled input fields, local arrays updating, and dynamic filtration tasks.
+* **Custom Styled ToDo App (Assignment 1):** Production-tuned state management orchestrating multi-controlled input fields, local array updating, and dynamic task filtration.
+* **Inspirational Quotes Generator (Assignment 2):** Asynchronous motivational engine featuring defensive async state handling (loading/error boundaries) to optimize client-side response time and prevent concurrent API request flooding.
 
 ---
 
@@ -46,7 +49,7 @@ The **Backend Engines** module highlights the progressive building steps of a se
 * **The Timeline Evolutions:** Progressing through 5 robust production stages—from core in-memory logic to headless APIs and secure JWT session persistence with HTTP-Only cookies.
 * **Demo Challenge 1 (NYT MVC):** Full-stack application utilizing isolated views, strict server-side payloads verification, and global cloud database persistence.
 * **Demo Challenge 2 (Welcome App MVC):** A highly secure full-stack app featuring automated `bcrypt` pre-save hashing hooks, custom server validation walls, cookie-backed state tracking, and a modernized side-by-side balanced dashboard UI layout.
-* **Final Backend Capstone (The Facebook MVC):** A production-grade server-side micro-platform strictly enforcing MVC architecture, standalone custom routing paths, asynchronous client deletion check confirmation pops, and strict database field length limits (Name $\le$ 15, Message $\le$ 40).
+* **Final Backend Capstone (The Facebook MVC):** A production-grade server-side micro-platform strictly enforcing MVC architecture, standalone custom routing paths, asynchronous client deletion check confirmation pops, and strict database field length limits (Name up to 15 chars, Message up to 40 chars).
 
 ---
 
