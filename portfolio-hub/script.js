@@ -329,57 +329,64 @@ function setActive(activeBtn) {
     activeBtn.classList.add('active');
 }
 
-// 🎬 Fullscreen Cinema Lightbox Engine with Native Browser Zoom Support
+// 🎬 Native Isolated Media Engines for Pristine Mobile Zoom Support
 
 function openPreviewModal(img1, img2) {
-    const modalHTML = `
-    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in" onclick="handleOverlayClick(event)">
-        <div class="modal-top-bar">
-            <span class="modal-title-text">📊 Postman Verification Logs</span>
-            <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
-        </div>
-        <div class="custom-modal-content-fullscreen">
-            <div class="fullscreen-grid-split">
-                <div class="fullscreen-media-card">
-                    <small class="fullscreen-preview-tag">⚡ GET /api/get-posts (Status 200)</small>
-                    <img src="${img1}" class="fullscreen-preview-img" alt="GET Request Log">
-                </div>
-                <div class="fullscreen-media-card">
-                    <small class="fullscreen-preview-tag">🚀 POST /api/create-post (Status 201)</small>
-                    <img src="${img2}" class="fullscreen-preview-img" alt="POST Request Log">
+    // Detect if the user is on a mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Open the logs sequentially or open the main execution directly in a native hardware tab
+        window.open(img1, '_blank');
+    } else {
+        // Desktop retains the immersive screen layout
+        const modalHTML = `
+        <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in" onclick="handleOverlayClick(event)">
+            <div class="modal-top-bar">
+                <span class="modal-title-text">📊 Postman Verification Logs</span>
+                <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="custom-modal-content-fullscreen">
+                <div class="fullscreen-grid-split">
+                    <div class="fullscreen-media-card">
+                        <small class="fullscreen-preview-tag">⚡ GET /api/get-posts (Status 200)</small>
+                        <img src="${img1}" class="fullscreen-preview-img" alt="GET Request Log">
+                    </div>
+                    <div class="fullscreen-media-card">
+                        <small class="fullscreen-preview-tag">🚀 POST /api/create-post (Status 201)</small>
+                        <img src="${img2}" class="fullscreen-preview-img" alt="POST Request Log">
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>`;
-    
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-    lockBodyScroll();
+        </div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function showGifModal(gifUrl, title) {
-    const modalHTML = `
-    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in" onclick="handleOverlayClick(event)">
-        <div class="modal-top-bar">
-            <span class="modal-title-text">🎬 ${title}</span>
-            <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
-        </div>
-        <div class="custom-modal-content-fullscreen">
-            <div class="single-media-container">
-                <img src="${gifUrl}" class="fullscreen-preview-img" alt="Project Execution Demo">
-            </div>
-        </div>
-    </div>`;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
-    lockBodyScroll();
-}
-
-function lockBodyScroll() {
-    document.body.style.overflow = 'hidden';
-}
-
-function unlockBodyScroll() {
-    document.body.style.overflow = '';
+    if (isMobile) {
+        // Seamlessly isolate the GIF in a native browser tab to unlock pristine hardware multi-touch zoom
+        window.open(gifUrl, '_blank');
+    } else {
+        // Desktop retains the full cinematic backdrop
+        const modalHTML = `
+        <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in" onclick="handleOverlayClick(event)">
+            <div class="modal-top-bar">
+                <span class="modal-title-text">🎬 ${title}</span>
+                <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="custom-modal-content-fullscreen">
+                <div class="single-media-container">
+                    <img src="${gifUrl}" class="fullscreen-preview-img" alt="Project Execution Demo">
+                </div>
+            </div>
+        </div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function handleOverlayClick(e) {
@@ -396,7 +403,7 @@ function closePreviewModal() {
         modal.classList.add('animate-fade-out');
         setTimeout(() => {
             modal.remove();
-            unlockBodyScroll();
+            document.body.style.overflow = '';
         }, 200);
     }
 }
