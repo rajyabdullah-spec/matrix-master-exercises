@@ -572,3 +572,41 @@ body {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
+
+/* Mobile UX Optimization for Lightbox Modal */
+.custom-modal-overlay {
+  touch-action: pan-x pan-y;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-image-wrapper {
+  overflow: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  touch-action: pinch-zoom;
+}
+
+.modal-preview-gif {
+  max-height: 65vh !important;
+  width: auto !important;
+  min-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .custom-modal-content {
+    margin: 1rem !important;
+    width: calc(100% - 2rem) !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-preview-gif {
+    max-height: 50vh !important;
+    object-fit: contain;
+  }
+}

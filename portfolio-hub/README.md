@@ -11,7 +11,7 @@ Instead of static pages, this dashboard is engineered as an **Agile Control Cent
 ### Core Engineering Capabilities:
 * **Dynamic Lifecycle Management**: Milestone elements are rendered and injected into the DOM in real-time from modular data arrays, ensuring a frictionless and responsive user experience.
 * **High-Performance Search Intelligence**: An integrated algorithmic search pipeline dynamically scans and filters multi-dimensional project datasets, providing zero-latency filtering across all technical tracks simultaneously.
-* **Asynchronous Media Lightbox Preview Engine**: Equipped with a custom asynchronous modal layer that seamlessly orchestrates multi-image Postman validation logs and standalone execution previews (GIFs) for both **React.js Architecture** and **Backend Engines**.
+* **Asynchronous Media Lightbox Preview Engine**: Equipped with a custom asynchronous modal layer that seamlessly orchestrates standalone execution previews (GIFs) and multi-image Postman validation logs, newly optimized with touch-action gestures and scroll-chaining prevention for pristine mobile UX.
 * **Grid Alignment Balance Optimization**: Formatted with a unified component structural envelope ensuring that all operational action buttons and launch links maintain absolute horizontal alignment regardless of text length variations.
 
 ---
@@ -40,6 +40,7 @@ The **React.js Architecture** module demonstrates a strict shift from imperative
 * **Hacker News Search Engine:** High-performance data filtering showcasing server-side queries tracking immutable state structures and conditional rendering blocks.
 * **Custom Styled ToDo App (Assignment 1):** Production-tuned state management orchestrating multi-controlled input fields, local array updating, and dynamic task filtration.
 * **Inspirational Quotes Generator (Assignment 2):** Asynchronous motivational engine featuring defensive async state handling (loading/error boundaries) to optimize client-side response time and prevent concurrent API request flooding.
+* **The Timeline Engine (Assignment 3):** High-fidelity architecture driven by the React Context API to manage nested relational state models. Enforces bidirectional chronological data sorting and features an immersive Premium Dark/Soft UI optimized for responsive mobile layout viewports.
 
 ---
 

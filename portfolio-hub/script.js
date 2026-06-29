@@ -102,7 +102,8 @@ const reactProjects = [
     { id: "02", name: "World Countries & User Setup Hub", desc: "Advanced application mastering functional hooks (useState, useEffect) and Axios data fetching. Features a custom controlled registration form with instantaneous Live Preview and an isolated scrollable UI layout.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/01-video-course-app/02-countries-and-form-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/01-course-projects/01-video-course-app/02-countries-and-form-app/src/assets/project-preview.gif", title: "World Countries & User Setup Hub Demo" } },
     { id: "03", name: "Hacker News Search Engine", desc: "Advanced implementation showcasing Server-side Search using the Hacker News API. Features strict immutability patterns and Conditional Rendering.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/02-hacker-news-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/01-course-projects/02-hacker-news-app/src/assets/project-demo.gif", title: "Hacker News Immutable Search State" } },
     { id: "04", name: "Custom Styled ToDo App", desc: "A responsive task management tracker handling state synchronization across multiple controlled input streams, dynamic filtering, and a custom UI.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-01", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-01/src/assets/project-demo.gif", title: "Custom Styled ToDo Fluid UI Execution" } },
-    { id: "05", name: "Inspirational Quotes Generator", desc: "An asynchronous dynamic quotes generator driven by functional states and Axios network integration. Features robust loading/error boundaries to prevent concurrent API flooding and clean isolated CSS typography.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-02/02-quotes-generator-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-02/02-quotes-generator-app/src/assets/project-demo.gif", title: "Inspirational Quotes Generator Dynamic Execution" } }
+    { id: "05", name: "Inspirational Quotes Generator", desc: "An asynchronous dynamic quotes generator driven by functional states and Axios network integration. Features robust loading/error boundaries to prevent concurrent API flooding and clean isolated CSS typography.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-02/02-quotes-generator-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-02/02-quotes-generator-app/src/assets/project-demo.gif", title: "Inspirational Quotes Generator Dynamic Execution" } },
+    { id: "06", name: "The Timeline Engine", desc: "Advanced single-page engine utilizing the React Context API to manage complex nested relational state models and bidirectional chronological data streams under a premium custom user interface.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-03/03-the-timeline-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-03/03-the-timeline-app/src/assets/project-preview.gif", title: "The Timeline Engine State Execution" } }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -341,11 +342,15 @@ function openPreviewModal(img1, img2) {
                 <div class="row g-4">
                     <div class="col-md-6 text-center">
                         <small class="modal-preview-tag">⚡ GET /api/get-posts (Status 200)</small>
-                        <img src="${img1}" class="img-fluid modal-preview-gif" alt="GET Request">
+                        <div class="modal-image-wrapper">
+                            <img src="${img1}" class="img-fluid modal-preview-gif" alt="GET Request">
+                        </div>
                     </div>
                     <div class="col-md-6 text-center">
                         <small class="modal-preview-tag">🚀 POST /api/create-post (Status 201)</small>
-                        <img src="${img2}" class="img-fluid modal-preview-gif" alt="POST Request">
+                        <div class="modal-image-wrapper">
+                            <img src="${img2}" class="img-fluid modal-preview-gif" alt="POST Request">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -354,6 +359,8 @@ function openPreviewModal(img1, img2) {
     
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
 }
 
 // 🎬 Single Image Preview Modal Engine
@@ -366,13 +373,17 @@ function showGifModal(gifUrl, title) {
                 <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
             </div>
             <div class="custom-modal-body text-center">
-                <img src="${gifUrl}" class="img-fluid rounded shadow" alt="Project Demo" style="max-height: 70vh; width: 100%; object-fit: cover;">
+                <div class="modal-image-wrapper">
+                    <img src="${gifUrl}" class="img-fluid rounded shadow modal-preview-gif" alt="Project Demo">
+                </div>
             </div>
         </div>
     </div>`;
     
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
 }
 
 function closePreviewModal() {
@@ -382,6 +393,8 @@ function closePreviewModal() {
         setTimeout(() => {
             modal.remove();
             document.body.style.overflow = 'auto';
+            document.body.style.position = '';
+            document.body.style.width = '';
         }, 300);
     }
 }
