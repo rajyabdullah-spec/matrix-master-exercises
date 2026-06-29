@@ -329,35 +329,24 @@ function setActive(activeBtn) {
     activeBtn.classList.add('active');
 }
 
-// 🎬 Production-Grade Smart Media Lightbox Engine with Multi-Touch Zoom & Drag Support
-
-let currentScale = 1;
-let isDragging = false;
-let startX, startY, translateX = 0, translateY = 0;
+// 🎬 Enterprise-Grade Cinema Lightbox Engine for Seamless Media Previews
 
 function openPreviewModal(img1, img2) {
-    resetZoomState();
     const modalHTML = `
-    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in">
-        <div class="custom-modal-content animate-slide-up">
-            <div class="custom-modal-header">
-                <h4 class="m-0 text-white">📊 Postman Execution Log Verification</h4>
-                <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
-            </div>
-            <div class="custom-modal-body">
-                <div class="row g-4">
-                    <div class="col-md-6 text-center">
-                        <small class="modal-preview-tag">⚡ GET /api/get-posts (Status 200)</small>
-                        <div class="modal-image-wrapper">
-                            <img src="${img1}" class="img-fluid modal-preview-gif zoomable-img" alt="GET Request">
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <small class="modal-preview-tag">🚀 POST /api/create-post (Status 201)</small>
-                        <div class="modal-image-wrapper">
-                            <img src="${img2}" class="img-fluid modal-preview-gif zoomable-img" alt="POST Request">
-                        </div>
-                    </div>
+    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in" onclick="handleOverlayClick(event)">
+        <div class="modal-top-bar">
+            <span class="modal-title-text">📊 Postman Verification Logs</span>
+            <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="custom-modal-content-fullscreen">
+            <div class="fullscreen-grid-split">
+                <div class="fullscreen-media-card">
+                    <small class="fullscreen-preview-tag">⚡ GET /api/get-posts (Status 200)</small>
+                    <img src="${img1}" class="fullscreen-preview-img" alt="GET Request Log">
+                </div>
+                <div class="fullscreen-media-card">
+                    <small class="fullscreen-preview-tag">🚀 POST /api/create-post (Status 201)</small>
+                    <img src="${img2}" class="fullscreen-preview-img" alt="POST Request Log">
                 </div>
             </div>
         </div>
@@ -365,71 +354,44 @@ function openPreviewModal(img1, img2) {
     
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     lockBodyScroll();
-    initZoomAndDragEngine();
 }
 
 function showGifModal(gifUrl, title) {
-    resetZoomState();
     const modalHTML = `
-    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in">
-        <div class="custom-modal-content animate-slide-up" style="max-width: 850px;">
-            <div class="custom-modal-header">
-                <h4 class="m-0 text-white">🎬 ${title}</h4>
-                <div class="d-flex align-items-center gap-2">
-                    <div class="zoom-controls-wrapper">
-                        <button onclick="zoomMedia(0.2)" class="zoom-action-btn" title="Zoom In">+</button>
-                        <button onclick="zoomMedia(-0.2)" class="zoom-action-btn" title="Zoom Out">-</button>
-                        <button onclick="resetZoomState(true)" class="zoom-action-btn" title="Reset Frame">⟲</button>
-                    </div>
-                    <button onclick="closePreviewModal()" class="modal-close-btn m-0">&times;</button>
-                </div>
-            </div>
-            <div class="custom-modal-body text-center" style="overflow: hidden; position: relative;">
-                <div class="modal-image-wrapper">
-                    <img id="target-zoom-media" src="${gifUrl}" class="img-fluid rounded shadow modal-preview-gif zoomable-img" alt="Project Demo">
-                </div>
-                <div class="mobile-zoom-tip d-md-none">Drag or use top controls to explore details</div>
+    <div id="custom-lightbox-modal" class="custom-modal-overlay animate-fade-in" onclick="handleOverlayClick(event)">
+        <div class="modal-top-bar">
+            <span class="modal-title-text">🎬 ${title}</span>
+            <button onclick="closePreviewModal()" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="custom-modal-content-fullscreen">
+            <div class="single-media-container">
+                <img src="${gifUrl}" class="fullscreen-preview-img main-gif-target" alt="Project Execution Demo">
             </div>
         </div>
     </div>`;
     
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     lockBodyScroll();
-    initZoomAndDragEngine();
 }
 
 function lockBodyScroll() {
     document.body.style.overflow = 'hidden';
     document.body.style.height = '100vh';
+    document.body.style.touchAction = 'none';
 }
 
 function unlockBodyScroll() {
     document.body.style.overflow = '';
     document.body.style.height = '';
+    document.body.style.touchAction = '';
 }
 
-function resetZoomState(applyToDOM = false) {
-    currentScale = 1;
-    translateX = 0;
-    translateY = 0;
-    isDragging = false;
-    if (applyToDOM) {
-        const img = document.getElementById('target-zoom-media');
-        if (img) {
-            img.style.transform = `scale(${currentScale}) translate(0px, 0px)`;
-        }
+function handleOverlayClick(e) {
+    const contentArea = document.querySelector('.custom-modal-content-fullscreen');
+    const topBar = document.querySelector('.modal-top-bar');
+    if (contentArea && !contentArea.contains(e.target) && !topBar.contains(e.target)) {
+        closePreviewModal();
     }
-}
-
-function zoomMedia(amount) {
-    const img = document.getElementById('target-zoom-media');
-    if (!img) return;
-    
-    currentScale += amount;
-    if (currentScale < 0.5) currentScale = 0.5;
-    if (currentScale > 3) currentScale = 3;
-    
-    img.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
 }
 
 function closePreviewModal() {
@@ -439,59 +401,8 @@ function closePreviewModal() {
         setTimeout(() => {
             modal.remove();
             unlockBodyScroll();
-            resetZoomState();
-        }, 300);
+        }, 200);
     }
-}
-
-function initZoomAndDragEngine() {
-    setTimeout(() => {
-        const img = document.getElementById('target-zoom-media');
-        const wrapper = document.querySelector('.modal-image-wrapper');
-        if (!img || !wrapper) return;
-
-        // Desktop Mouse Drag Events
-        wrapper.addEventListener('mousedown', (e) => {
-            if (currentScale <= 1) return;
-            isDragging = true;
-            wrapper.style.cursor = 'grabbing';
-            startX = e.clientX - translateX;
-            startY = e.clientY - translateY;
-            e.preventDefault();
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            translateX = e.clientX - startX;
-            translateY = e.clientY - startY;
-            img.style.transform = `scale(${currentScale}) translate(${translateX / currentScale}px, ${translateY / currentScale}px)`;
-        });
-
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-            if (wrapper) wrapper.style.cursor = currentScale > 1 ? 'grab' : 'default';
-        });
-
-        // Mobile Touch Gestures for Dragging
-        wrapper.addEventListener('touchstart', (e) => {
-            if (currentScale <= 1 || e.touches.length !== 1) return;
-            isDragging = true;
-            startX = e.touches[0].clientX - translateX;
-            startY = e.touches[0].clientY - translateY;
-        });
-
-        wrapper.addEventListener('touchmove', (e) => {
-            if (!isDragging || e.touches.length !== 1) return;
-            translateX = e.touches[0].clientX - startX;
-            translateY = e.touches[0].clientY - startY;
-            img.style.transform = `scale(${currentScale}) translate(${translateX / currentScale}px, ${translateY / currentScale}px)`;
-            e.preventDefault();
-        }, { passive: false });
-
-        wrapper.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-    }, 100);
 }
 
 // Execution initialization pipeline
