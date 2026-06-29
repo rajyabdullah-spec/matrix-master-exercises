@@ -329,7 +329,7 @@ function setActive(activeBtn) {
     activeBtn.classList.add('active');
 }
 
-// 🎬 Enterprise-Grade Cinema Lightbox Engine for Seamless Media Previews
+// 🎬 Fullscreen Cinema Lightbox Engine with Native Browser Zoom Support
 
 function openPreviewModal(img1, img2) {
     const modalHTML = `
@@ -365,7 +365,7 @@ function showGifModal(gifUrl, title) {
         </div>
         <div class="custom-modal-content-fullscreen">
             <div class="single-media-container">
-                <img src="${gifUrl}" class="fullscreen-preview-img main-gif-target" alt="Project Execution Demo">
+                <img src="${gifUrl}" class="fullscreen-preview-img" alt="Project Execution Demo">
             </div>
         </div>
     </div>`;
@@ -376,14 +376,10 @@ function showGifModal(gifUrl, title) {
 
 function lockBodyScroll() {
     document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-    document.body.style.touchAction = 'none';
 }
 
 function unlockBodyScroll() {
     document.body.style.overflow = '';
-    document.body.style.height = '';
-    document.body.style.touchAction = '';
 }
 
 function handleOverlayClick(e) {
