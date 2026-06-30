@@ -34,7 +34,7 @@ const jsExercises = [
     { id: "15", name: "OOP & Async Integration", desc: "Advanced architecture using ES6 Classes, Context binding (this), and Promise-based asynchronous logic.", path: "https://rajyabdullah-spec.github.io/vanilla-js-exercises/15-OOP-Putting-Everything-Together/", github: "https://github.com/rajyabdullah-spec/vanilla-js-exercises/tree/main/15-OOP-Putting-Everything-Together" }
 ];
 
-// 🧠 3. JavaScript Algorithms Mastery (Structured by Weekly Sprint Buckets)
+// 📁 3. JavaScript Algorithms Mastery (Structured by Weekly Sprint Buckets)
 const algoMasteryGroups = {
     "Week 01: Basic Algorithms": [
         { id: "Basic-01", name: "Monday: Basic JS Algorithms", desc: "Mastering fundamental loops (1-135) and T-Diagram analysis for Sum, Max, and Average.", path: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery/blob/main/01-Basic-Algorithms/Monday-Basic.js", github: "https://github.com/rajyabdullah-spec/JavaScript-Algorithms-Mastery" },
@@ -118,19 +118,17 @@ const btnBackend = document.getElementById('show-backend');
 const searchInput = document.getElementById('search-input');
 const searchClearBtn = document.getElementById('search-clear-btn');
 
-// 🏗️ Helper Function to build Single Project Card HTML Template
 function createCardHTML(p, type) {
     const isAlgo = type === 'algo';
+    const isJs = type === 'js';
     const isAjax = type === 'ajax';
     const isBackend = type === 'backend';
     const isReact = type === 'react';
-    const isJs = type === 'js';
     
     let tagText = `Mission #${p.id}`;
     if (isAlgo) tagText = `${p.id}`; 
     if (isAjax) tagText = `App #${p.id}`;
     
-    // Smart verification to differentiate React Assignments from Demo Challenges
     if (isReact) {
         if (p.name.toLowerCase().includes('challenge')) {
             tagText = `Demo Challenge ${p.challengeNumber || 1}`;
@@ -153,13 +151,15 @@ function createCardHTML(p, type) {
         }
     }
 
-    // Baseline configuration for all source routing links
     let launchText = 'Explore Code';
+    if (isBackend && p.id === "06") { launchText = 'Launch Live App'; }
+    if (isReact && p.name.toLowerCase().includes('challenge')) { launchText = 'Local Project'; }
     
-    if (isAlgo) {
-        launchText = 'View Logic';
-    } else if (isBackend && p.id === "06") {
-        launchText = 'Launch Live App'; 
+    if (isBackend) {
+        if (p.id === "05") { launchText = 'Read API Docs'; } 
+        else if (p.id === "06") { launchText = 'Launch Live App'; } 
+        else if (p.id === "07" || p.id === "08" || p.id === "09") { launchText = 'Local Project'; } 
+        else { launchText = 'Read Architecture'; }
     }
 
     let testSpecsBtnHTML = "";
@@ -179,7 +179,7 @@ function createCardHTML(p, type) {
 
     return `
     <div class="col-md-6 col-lg-4">
-            <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isJs ? 'js-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''} ${isReact ? 'react-card' : ''}">
+        <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isJs ? 'js-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''} ${isReact ? 'react-card' : ''}">
             <span class="task-tag">${tagText}</span>
             <h3 class="card-title">${p.name}</h3>
             <p class="card-desc">${p.desc}</p>
@@ -232,7 +232,7 @@ function render(type) {
                     grid.innerHTML += createCardHTML(p, 'algo');
                 });
             });
-} else {
+        } else {
             let currentList;
             if (type === 'html') currentList = myWork;
             else if (type === 'js') currentList = jsExercises;

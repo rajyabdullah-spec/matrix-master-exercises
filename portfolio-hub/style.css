@@ -10,7 +10,7 @@
     /* Strict Layout Track Color Tokens */
     --color-html: #ff6d00;   /* HTML5 Orange */
     --color-js: #f7df1e;     /* JS Yellow */
-    --color-algo: #10b981;   /* Algo Gold */
+    --color-algo: #10b981;   /* Algorithm Emerald Green */
     --color-ajax: #00f2fe;   /* Ajax Cyan */
     --color-react: #61dafb;  /* React Light Blue */
     --color-backend: #38bdf8;/* Backend Sky Blue */
@@ -121,8 +121,8 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
 }
 
 /* Enforce Strict Track Left-Borders with Elegant Subdued Opacity in Default State */
-.project-card { border-left: 5px solid rgba(255, 109, 0, 0.4) !important; } /* HTML default */
-.project-card.js-card { border-left: 5px solid rgba(247, 223, 30, 0.4) !important; } /* JS default */
+.project-card { border-left: 5px solid rgba(255, 109, 0, 0.4) !important; }
+.project-card.js-card { border-left: 5px solid rgba(247, 223, 30, 0.4) !important; }
 .project-card.algo-card { border-left: 5px solid rgba(16, 185, 129, 0.4) !important; }
 .project-card.ajax-card { border-left: 5px solid rgba(0, 242, 254, 0.4) !important; }
 .project-card.react-card { border-left: 5px solid rgba(97, 218, 251, 0.4) !important; }
@@ -159,8 +159,8 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
 .project-card.js-card:hover { border-left-color: var(--color-js) !important; box-shadow: 0 20px 40px rgba(247, 223, 30, 0.1) !important; }
 .project-card.js-card:hover .card-title { color: var(--color-js) !important; text-shadow: 0 0 10px rgba(247, 223, 30, 0.2); }
 
-.project-card.algo-card:hover { border-left-color: var(--color-algo) !important; box-shadow: 0 20px 40px rgba(251, 191, 36, 0.1) !important; }
-.project-card.algo-card:hover .card-title { color: var(--color-algo) !important; text-shadow: 0 0 10px rgba(251, 191, 36, 0.2); }
+.project-card.algo-card:hover { border-left-color: var(--color-algo) !important; box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1) !important; }
+.project-card.algo-card:hover .card-title { color: var(--color-algo) !important; text-shadow: 0 0 10px rgba(16, 185, 129, 0.2); }
 
 .project-card.ajax-card:hover { border-left-color: var(--color-ajax) !important; box-shadow: 0 20px 40px rgba(0, 242, 254, 0.1) !important; }
 .project-card.ajax-card:hover .card-title { color: var(--color-ajax) !important; text-shadow: 0 0 10px rgba(0, 242, 254, 0.3); }
@@ -201,12 +201,12 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
 /* Track-Specific Button Hover Injections */
 .project-card:hover .btn-launch { color: var(--color-html) !important; border-color: rgba(255, 109, 0, 0.3) !important; }
 .project-card.js-card:hover .btn-launch { color: var(--color-js) !important; border-color: rgba(247, 223, 30, 0.3) !important; }
-.project-card.algo-card:hover .btn-launch { color: var(--color-algo) !important; border-color: rgba(251, 191, 36, 0.3) !important; }
+.project-card.algo-card:hover .btn-launch { color: var(--color-algo) !important; border-color: rgba(16, 185, 129, 0.3) !important; }
 .project-card.ajax-card:hover .btn-launch { color: var(--color-ajax) !important; border-color: rgba(0, 242, 254, 0.3) !important; }
 .project-card.react-card:hover .btn-launch { color: var(--color-react) !important; border-color: rgba(97, 218, 251, 0.3) !important; }
 .project-card.backend-card:hover .btn-launch { color: var(--color-backend) !important; border-color: rgba(56, 189, 248, 0.3) !important; }
 
-.project-card.algo-card:hover .btn-outline-dark { color: var(--color-algo) !important; border-color: rgba(251, 191, 36, 0.15) !important; }
+.project-card.algo-card:hover .btn-outline-dark { color: var(--color-algo) !important; border-color: rgba(16, 185, 129, 0.15) !important; }
 .project-card.algo-card .btn-outline-dark:hover { background-color: var(--color-algo) !important; color: #111827 !important; }
 
 .project-card.ajax-card:hover .btn-outline-dark { color: var(--color-ajax) !important; border-color: rgba(0, 242, 254, 0.15) !important; }
@@ -223,18 +223,57 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
 .backend-card:nth-child(6) .btn-launch:hover { background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%) !important; box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important; }
 
 /* ==========================================================================
-   📂 Sprint Structure Section Dividers & Stats Boxes
+   📂 Sprint Structure Section Dividers & High-Fidelity Stats Counter Boxes
    ========================================================================== */
-.week-sprint-header { font-size: 1.4rem; font-weight: 800; color: #ffffff; letter-spacing: 1px; border-left: 5px solid #fbbf24; padding-left: 14px; text-transform: uppercase; text-shadow: 0 0 10px rgba(251, 191, 36, 0.2); }
-.week-sprint-divider { flex-grow: 1; height: 2px; background: linear-gradient(90deg, #fbbf24, transparent); opacity: 0.2; }
+.week-sprint-header { font-size: 1.4rem; font-weight: 800; color: #ffffff; letter-spacing: 1px; border-left: 5px solid var(--color-algo); padding-left: 14px; text-transform: uppercase; text-shadow: 0 0 10px rgba(16, 185, 129, 0.2); }
+.week-sprint-divider { flex-grow: 1; height: 2px; background: linear-gradient(90deg, var(--color-algo), transparent); opacity: 0.2; }
 
-.stats-box { background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 22px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: all 0.3s ease; }
-.stats-box:hover { transform: translateY(-3px); border-color: rgba(99, 102, 241, 0.25); }
-.stats-box.highlight { border-left: 4px solid #fbbf24; }
-.stats-icon { font-size: 1.6rem; display: block; margin-bottom: 5px; }
-.stats-value { font-size: 2.2rem; font-weight: 800; line-height: 1; color: #ffffff; }
-.stats-box.highlight .stats-value { color: #fbbf24; }
-.stats-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+/* Fully Restored and Realigned Dashboard Achievement Counters */
+.stats-box { 
+    background: rgba(30, 41, 59, 0.2) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.03) !important; 
+    border-radius: 24px; 
+    padding: 24px; 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Subdued Inner Glow Identity Per Stats Box */
+.stats-box:not(.highlight) { 
+    border-left: 4px solid rgba(124, 58, 237, 0.4) !important; /* Indigo glow for exercises */
+}
+.stats-box.highlight { 
+    border-left: 4px solid rgba(16, 185, 129, 0.4) !important; /* Emerald glow for algorithms */
+}
+
+/* High-Specificity Hover Wake States */
+.stats-box:hover { 
+    transform: translateY(-4px) !important; 
+    background: rgba(30, 41, 59, 0.35) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.stats-box:not(.highlight):hover { 
+    border-left-color: #7c3aed !important; 
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.1) !important; 
+}
+.stats-box.highlight:hover { 
+    border-left-color: var(--color-algo) !important; 
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.1) !important; 
+}
+
+.stats-icon { font-size: 1.7rem; display: block; margin-bottom: 6px; }
+.stats-value { font-size: 2.3rem; font-weight: 800; line-height: 1; transition: color 0.3s ease; }
+
+/* Dynamic Value Color Injections */
+.stats-box:not(.highlight) .stats-value { color: #a78bfa !important; }
+.stats-box.highlight .stats-value { color: var(--color-algo) !important; }
+
+.stats-box:not(.highlight):hover .stats-value { color: #c084fc !important; text-shadow: 0 0 12px rgba(167, 139, 250, 0.3); }
+.stats-box.highlight:hover .stats-value { color: var(--color-algo) !important; text-shadow: 0 0 12px rgba(16, 185, 129, 0.3); }
+
+.stats-label { font-size: 0.75rem; color: var(--text-muted) !important; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; font-weight: 600; }
 
 /* ==========================================================================
    🔍 Search Bar Processing Interfaces & Cinema Modals
