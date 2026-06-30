@@ -152,24 +152,13 @@ function createCardHTML(p, type) {
         }
     }
 
-    let launchText = 'Launch Demo';
-    if (isAlgo) launchText = 'View Logic';
+    // Baseline configuration for all source routing links
+    let launchText = 'Explore Code';
     
-    // Dynamic text synchronization for local non-deployed execution environments
-    if (isReact && p.name.toLowerCase().includes('challenge')) {
-        launchText = 'Local Project';
-    }
-    
-    if (isBackend) {
-        if (p.id === "05") {
-            launchText = 'Read API Docs'; 
-        } else if (p.id === "06") {
-            launchText = 'Launch Live App'; 
-        } else if (p.id === "07" || p.id === "08" || p.id === "09") {
-            launchText = 'Local Project'; 
-        } else {
-            launchText = 'Read Architecture';
-        }
+    if (isAlgo) {
+        launchText = 'View Logic';
+    } else if (isBackend && p.id === "06") {
+        launchText = 'Launch Live App'; 
     }
 
     let testSpecsBtnHTML = "";
