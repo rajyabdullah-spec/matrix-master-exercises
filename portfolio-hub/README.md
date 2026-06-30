@@ -41,6 +41,8 @@ The **React.js Architecture** module demonstrates a strict shift from imperative
 * **Custom Styled ToDo App (Assignment 1):** Production-tuned state management orchestrating multi-controlled input fields, local array updating, and dynamic task filtration.
 * **Inspirational Quotes Generator (Assignment 2):** Asynchronous motivational engine featuring defensive async state handling (loading/error boundaries) to optimize client-side response time and prevent concurrent API request flooding.
 * **The Timeline Engine (Assignment 3):** High-fidelity architecture driven by the React Context API to manage nested relational state models. Enforces bidirectional chronological data sorting and features an immersive Premium Dark/Soft UI optimized for responsive mobile layout viewports.
+* **Premium Music Engine (Demo Challenge 1):** Fast-paced asynchronous challenge designed under strict constraints to process relational metadata queries, interacting with the real-time **Apple iTunes Search API** to fetch official music album catalogs, structural cover arts, and clean client-side controlled form submit lifecycles.
+
 
 ---
 

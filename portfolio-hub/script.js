@@ -103,7 +103,8 @@ const reactProjects = [
     { id: "03", name: "Hacker News Search Engine", desc: "Advanced implementation showcasing Server-side Search using the Hacker News API. Features strict immutability patterns and Conditional Rendering.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/01-course-projects/02-hacker-news-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/01-course-projects/02-hacker-news-app/src/assets/project-demo.gif", title: "Hacker News Immutable Search State" } },
     { id: "04", name: "Custom Styled ToDo App", desc: "A responsive task management tracker handling state synchronization across multiple controlled input streams, dynamic filtering, and a custom UI.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-01", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-01/src/assets/project-demo.gif", title: "Custom Styled ToDo Fluid UI Execution" } },
     { id: "05", name: "Inspirational Quotes Generator", desc: "An asynchronous dynamic quotes generator driven by functional states and Axios network integration. Features robust loading/error boundaries to prevent concurrent API flooding and clean isolated CSS typography.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-02/02-quotes-generator-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-02/02-quotes-generator-app/src/assets/project-demo.gif", title: "Inspirational Quotes Generator Dynamic Execution" } },
-    { id: "06", name: "The Timeline Engine", desc: "Advanced single-page engine utilizing the React Context API to manage complex nested relational state models and bidirectional chronological data streams under a premium custom user interface.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-03/03-the-timeline-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-03/03-the-timeline-app/src/assets/project-preview.gif", title: "The Timeline Engine State Execution" } }
+    { id: "06", name: "The Timeline Engine", desc: "Advanced single-page engine utilizing the React Context API to manage complex nested relational state models and bidirectional chronological data streams under a premium custom user interface.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/02-assignments/assignment-03/03-the-timeline-app", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/02-assignments/assignment-03/03-the-timeline-app/src/assets/project-preview.gif", title: "The Timeline Engine State Execution" } },
+    { id: "07", name: "Premium Music Engine Challenge", desc: "An asynchronous React application capturing metadata queries and integrating with the live Apple iTunes Search API to render true commercial album catalogs, rich cover arts, and precise control form lifecycles.", path: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio/tree/main/03-demo-challenges/demo-challenge-01", github: "https://github.com/rajyabdullah-spec/react-js-mastery-portfolio", singleGif: { url: "https://raw.githubusercontent.com/rajyabdullah-spec/react-js-mastery-portfolio/main/03-demo-challenges/demo-challenge-01/src/assets/project-preview.gif", title: "Premium Music Engine Hardware Zoom Execution" } }
 ];
 
 // 🎛️ DOM Selectors for Navigation Buttons
@@ -127,7 +128,15 @@ function createCardHTML(p, type) {
     let tagText = `Mission #${p.id}`;
     if (isAlgo) tagText = `${p.id}`; 
     if (isAjax) tagText = `App #${p.id}`;
-    if (isReact) tagText = `React App #${p.id}`;
+    
+    // Smart verification to differentiate React Assignments from Demo Challenges
+    if (isReact) {
+        if (p.name.toLowerCase().includes('challenge')) {
+            tagText = `Demo Challenge ${p.challengeNumber || 1}`;
+        } else {
+            tagText = `React App #${p.id}`;
+        }
+    }
     
     if (isBackend) {
         if (p.id === "01") {
@@ -145,6 +154,12 @@ function createCardHTML(p, type) {
 
     let launchText = 'Launch Demo';
     if (isAlgo) launchText = 'View Logic';
+    
+    // Dynamic text synchronization for local non-deployed execution environments
+    if (isReact && p.name.toLowerCase().includes('challenge')) {
+        launchText = 'Local Project';
+    }
+    
     if (isBackend) {
         if (p.id === "05") {
             launchText = 'Read API Docs'; 
@@ -227,7 +242,7 @@ function render(type) {
                     grid.innerHTML += createCardHTML(p, 'algo');
                 });
             });
-        } else {
+} else {
             let currentList;
             if (type === 'html') currentList = myWork;
             else if (type === 'js') currentList = jsExercises;
@@ -235,7 +250,16 @@ function render(type) {
             else if (type === 'react') currentList = reactProjects;
             else currentList = ajaxProjects;
 
+            // Architectural auto-increment counter for specific demo challenges
+            let challengeCounter = 0;
+
             currentList.forEach(p => {
+                // If it's a React project and contains 'challenge' in its name, increment the counter
+                if (type === 'react' && p.name.toLowerCase().includes('challenge')) {
+                    challengeCounter++;
+                    // Temporarily assign a dynamic property for the card template logic to read
+                    p.challengeNumber = challengeCounter;
+                }
                 grid.innerHTML += createCardHTML(p, type);
             });
         }
