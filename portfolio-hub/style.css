@@ -8,11 +8,13 @@
     --text-muted: #94a3b8;
     
     /* Strict Layout Track Color Tokens */
-    --color-html: #475569;
-    --color-algo: #fbbf24;
-    --color-ajax: #00f2fe;
-    --color-react: #61dafb;
-    --color-backend: #38bdf8;
+    --color-html: #ff6d00;   /* HTML5 Orange */
+    --color-js: #f7df1e;     /* JS Yellow */
+    --color-algo: #10b981;   /* Algo Gold */
+    --color-ajax: #00f2fe;   /* Ajax Cyan */
+    --color-react: #61dafb;  /* React Light Blue */
+    --color-backend: #38bdf8;/* Backend Sky Blue */
+    --matte-gray: #475569;
 }
 
 html, body {
@@ -103,10 +105,10 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
 }
 
 /* ==========================================================================
-   📂 Absolute Baseline Glassmorphism Grid Card Engine (Default: Subdued/Matte)
+   📂 Absolute Baseline Card Engine (Default State: Elegant Subdued Opacity 0.4)
    ========================================================================== */
 .project-card {
-    background: rgba(30, 41, 59, 0.2) !important;
+    background: rgba(30, 41, 59, 0.15) !important;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.03) !important;
@@ -118,46 +120,56 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
     flex-direction: column;
 }
 
-/* Track Base Borders Initialization */
-.project-card { border-left: 5px solid var(--color-html) !important; }
-.project-card.algo-card { border-left: 5px solid var(--color-algo) !important; background: rgba(30, 41, 59, 0.2) !important; }
-.project-card.ajax-card { border-left: 5px solid var(--color-ajax) !important; }
-.project-card.react-card { border-left: 5px solid var(--color-react) !important; }
-.project-card.backend-card { border-left: 5px solid var(--color-backend) !important; }
+/* Enforce Strict Track Left-Borders with Elegant Subdued Opacity in Default State */
+.project-card { border-left: 5px solid rgba(255, 109, 0, 0.4) !important; } /* HTML default */
+.project-card.js-card { border-left: 5px solid rgba(247, 223, 30, 0.4) !important; } /* JS default */
+.project-card.algo-card { border-left: 5px solid rgba(16, 185, 129, 0.4) !important; }
+.project-card.ajax-card { border-left: 5px solid rgba(0, 242, 254, 0.4) !important; }
+.project-card.react-card { border-left: 5px solid rgba(97, 218, 251, 0.4) !important; }
+.project-card.backend-card { border-left: 5px solid rgba(56, 189, 248, 0.4) !important; }
+
+/* Font and Tag Configurations in Default State */
+.project-card .card-title { color: #f1f5f9 !important; transition: all 0.3s ease; font-weight: 800; font-size: 1.35rem; margin-bottom: 12px; }
+.project-card .card-desc { color: #cbd5e1 !important; transition: all 0.3s ease; font-size: 0.88rem; line-height: 1.6; margin-bottom: 24px; }
+
+.task-tag { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; margin-bottom: 14px; display: block; transition: all 0.3s ease; opacity: 0.55; }
+.project-card .task-tag { color: var(--color-html) !important; }
+.project-card.js-card .task-tag { color: var(--color-js) !important; }
+.project-card.algo-card .task-tag { color: var(--color-algo) !important; }
+.project-card.ajax-card .task-tag { color: var(--color-ajax) !important; }
+.project-card.react-card .task-tag { color: var(--color-react) !important; }
+.project-card.backend-card .task-tag { color: var(--color-backend) !important; }
+
+.algo-card .card-desc, .ajax-card .card-desc, .react-card .card-desc, .backend-card .card-desc { font-size: 0.85rem; }
 
 /* ==========================================================================
-   🎯 Absolute Baseline Harmonious Hover Transitions (All Cards Light Up)
+   🎯 High-Specificity Reactive Hover Engine (Cards Universally Wake Up to 100%)
    ========================================================================== */
 .project-card:hover {
-    transform: translateY(-6px);
-    background: rgba(30, 41, 59, 0.45) !important;
+    transform: translateY(-6px) !important;
+    background: rgba(30, 41, 59, 0.4) !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
 }
+.project-card:hover .task-tag { opacity: 1 !important; }
 
-/* Dynamic Specific Ambient Glow Routing Matrix */
-.project-card:hover { box-shadow: 0 20px 40px rgba(255, 255, 255, 0.02); }
-.project-card.algo-card:hover { box-shadow: 0 20px 40px rgba(251, 191, 36, 0.08); border-left-color: var(--color-algo) !important; }
-.project-card.ajax-card:hover { box-shadow: 0 20px 40px rgba(0, 242, 254, 0.08); border-left-color: var(--color-ajax) !important; }
-.project-card.react-card:hover { box-shadow: 0 20px 40px rgba(97, 218, 251, 0.08); border-left-color: var(--color-react) !important; }
-.project-card.backend-card:hover { box-shadow: 0 20px 40px rgba(56, 189, 248, 0.08); border-left-color: var(--color-backend) !important; }
+/* Dynamic Track-Specific Glow and Full Opacity Borders on Hover Action */
+.project-card:hover { border-left-color: var(--color-html) !important; box-shadow: 0 20px 40px rgba(255, 109, 0, 0.1) !important; }
+.project-card:hover .card-title { color: var(--color-html) !important; text-shadow: 0 0 10px rgba(255, 109, 0, 0.2); }
 
-/* Text Color State Synchronization */
-.project-card .card-title { color: #f1f5f9; transition: color 0.3s ease, text-shadow 0.3s ease; font-weight: 800; font-size: 1.35rem; margin-bottom: 12px; }
-.project-card .card-desc { color: #cbd5e1; transition: color 0.3s ease; font-size: 0.88rem; line-height: 1.6; margin-bottom: 24px; }
+.project-card.js-card:hover { border-left-color: var(--color-js) !important; box-shadow: 0 20px 40px rgba(247, 223, 30, 0.1) !important; }
+.project-card.js-card:hover .card-title { color: var(--color-js) !important; text-shadow: 0 0 10px rgba(247, 223, 30, 0.2); }
 
+.project-card.algo-card:hover { border-left-color: var(--color-algo) !important; box-shadow: 0 20px 40px rgba(251, 191, 36, 0.1) !important; }
 .project-card.algo-card:hover .card-title { color: var(--color-algo) !important; text-shadow: 0 0 10px rgba(251, 191, 36, 0.2); }
-.project-card.ajax-card:hover .card-title { color: var(--color-ajax) !important; text-shadow: 0 0 10px rgba(0, 242, 254, 0.3); }
-.project-card.react-card:hover .card-title { color: var(--color-react) !important; text-shadow: 0 0 10px rgba(97, 218, 251, 0.3); }
-.project-card.backend-card:hover .card-title { color: #ffffff !important; }
 
-/* ==========================================================================
-   📂 Card Internal Layout Elements
-   ========================================================================== */
-.task-tag { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; margin-bottom: 14px; display: block; color: var(--text-muted); }
-.algo-card .task-tag { color: var(--color-algo) !important; }
-.ajax-card .task-tag { color: var(--color-ajax) !important; }
-.react-card .task-tag { color: var(--color-react) !important; }
-.backend-card .task-tag { color: var(--color-backend) !important; }
+.project-card.ajax-card:hover { border-left-color: var(--color-ajax) !important; box-shadow: 0 20px 40px rgba(0, 242, 254, 0.1) !important; }
+.project-card.ajax-card:hover .card-title { color: var(--color-ajax) !important; text-shadow: 0 0 10px rgba(0, 242, 254, 0.3); }
+
+.project-card.react-card:hover { border-left-color: var(--color-react) !important; box-shadow: 0 20px 40px rgba(97, 218, 251, 0.1) !important; }
+.project-card.react-card:hover .card-title { color: var(--color-react) !important; text-shadow: 0 0 10px rgba(97, 218, 251, 0.3); }
+
+.project-card.backend-card:hover { border-left-color: var(--color-backend) !important; box-shadow: 0 20px 40px rgba(56, 189, 248, 0.1) !important; }
+.project-card.backend-card:hover .card-title { color: var(--color-backend) !important; text-shadow: 0 0 10px rgba(56, 189, 248, 0.2); }
 
 /* ==========================================================================
    🎛️ Unified Action Button Infrastructure (Matte Default -> Colored Hover)
@@ -174,29 +186,37 @@ body::after { background: #a78bfa; bottom: 15%; right: -100px; animation: pulseA
     margin-top: auto;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Button Track Reactive Injections upon Parent Card Hover State */
-.project-card:hover .btn-launch { background: #1f2937 !important; color: #38bdf8 !important; border-color: rgba(56, 189, 248, 0.3) !important; }
-.project-card.algo-card:hover .btn-launch { color: var(--color-algo) !important; border-color: rgba(251, 191, 36, 0.3) !important; }
-.project-card.ajax-card:hover .btn-launch { color: var(--color-ajax) !important; border-color: rgba(0, 242, 254, 0.3) !important; }
-.project-card.react-card:hover .btn-launch { color: var(--color-react) !important; border-color: rgba(97, 218, 251, 0.3) !important; }
-
 .btn-outline-dark {
     color: var(--text-muted) !important;
     border-color: rgba(255, 255, 255, 0.05) !important;
     background: transparent !important;
     transition: all 0.2s ease;
 }
-.btn-outline-dark:hover { background-color: rgba(255, 255, 255, 0.03) !important; color: #ffffff !important; border-color: rgba(255, 255, 255, 0.15) !important; }
 
-.algo-card .btn-outline-dark { color: var(--color-algo) !important; border-color: rgba(251, 191, 36, 0.15) !important; }
-.algo-card .btn-outline-dark:hover { background-color: var(--color-algo) !important; color: #111827 !important; }
+/* Generic Hover for Buttons */
+.project-card:hover .btn-launch { background: #1f2937 !important; color: #ffffff !important; border-color: rgba(255, 255, 255, 0.2) !important; }
+.project-card:hover .btn-outline-dark { color: #ffffff !important; border-color: rgba(255, 255, 255, 0.15) !important; }
+.btn-outline-dark:hover { background-color: rgba(255, 255, 255, 0.05) !important; }
 
-.ajax-card .btn-outline-dark { color: var(--color-ajax) !important; border-color: rgba(0, 242, 254, 0.15) !important; }
-.ajax-card .btn-outline-dark:hover { background-color: var(--color-ajax) !important; color: #0b1329 !important; }
+/* Track-Specific Button Hover Injections */
+.project-card:hover .btn-launch { color: var(--color-html) !important; border-color: rgba(255, 109, 0, 0.3) !important; }
+.project-card.js-card:hover .btn-launch { color: var(--color-js) !important; border-color: rgba(247, 223, 30, 0.3) !important; }
+.project-card.algo-card:hover .btn-launch { color: var(--color-algo) !important; border-color: rgba(251, 191, 36, 0.3) !important; }
+.project-card.ajax-card:hover .btn-launch { color: var(--color-ajax) !important; border-color: rgba(0, 242, 254, 0.3) !important; }
+.project-card.react-card:hover .btn-launch { color: var(--color-react) !important; border-color: rgba(97, 218, 251, 0.3) !important; }
+.project-card.backend-card:hover .btn-launch { color: var(--color-backend) !important; border-color: rgba(56, 189, 248, 0.3) !important; }
 
-.react-card .btn-outline-dark { color: var(--color-react) !important; border-color: rgba(97, 218, 251, 0.15) !important; }
-.react-card .btn-outline-dark:hover { background-color: var(--color-react) !important; color: #0f172a !important; }
+.project-card.algo-card:hover .btn-outline-dark { color: var(--color-algo) !important; border-color: rgba(251, 191, 36, 0.15) !important; }
+.project-card.algo-card .btn-outline-dark:hover { background-color: var(--color-algo) !important; color: #111827 !important; }
+
+.project-card.ajax-card:hover .btn-outline-dark { color: var(--color-ajax) !important; border-color: rgba(0, 242, 254, 0.15) !important; }
+.project-card.ajax-card .btn-outline-dark:hover { background-color: var(--color-ajax) !important; color: #0b1329 !important; }
+
+.project-card.react-card:hover .btn-outline-dark { color: var(--color-react) !important; border-color: rgba(97, 218, 251, 0.15) !important; }
+.project-card.react-card .btn-outline-dark:hover { background-color: var(--color-react) !important; color: #0f172a !important; }
+
+.project-card.backend-card:hover .btn-outline-dark { color: var(--color-backend) !important; border-color: rgba(56, 189, 248, 0.15) !important; }
+.project-card.backend-card .btn-outline-dark:hover { background-color: var(--color-backend) !important; color: #0f172a !important; }
 
 /* Live Deploy Overrides (Render Server Engine Bounds) */
 .backend-card:nth-child(6) .btn-launch { background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important; color: #ffffff !important; border: none !important; }

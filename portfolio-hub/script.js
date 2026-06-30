@@ -124,6 +124,7 @@ function createCardHTML(p, type) {
     const isAjax = type === 'ajax';
     const isBackend = type === 'backend';
     const isReact = type === 'react';
+    const isJs = type === 'js';
     
     let tagText = `Mission #${p.id}`;
     if (isAlgo) tagText = `${p.id}`; 
@@ -178,7 +179,7 @@ function createCardHTML(p, type) {
 
     return `
     <div class="col-md-6 col-lg-4">
-        <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''} ${isReact ? 'react-card' : ''}">
+            <div class="project-card d-flex flex-column h-100 ${isAlgo ? 'algo-card' : ''} ${isJs ? 'js-card' : ''} ${isAjax ? 'ajax-card' : ''} ${isBackend ? 'backend-card' : ''} ${isReact ? 'react-card' : ''}">
             <span class="task-tag">${tagText}</span>
             <h3 class="card-title">${p.name}</h3>
             <p class="card-desc">${p.desc}</p>
